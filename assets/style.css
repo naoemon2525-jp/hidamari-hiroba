@@ -730,3 +730,8 @@ h3.block-title {
   padding: 0; margin: -1px; overflow: hidden;
   clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
+
+.x-link { margin: 8px 0 0; font-size: 13px; }
+.x-link a { color: var(--accent); font-weight: 700; text-decoration: none; }
+.x-link a:hover { text-decoration: underline; }
+.site-footer a { color: var(--accent); }

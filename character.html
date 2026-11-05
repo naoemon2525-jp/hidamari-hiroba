@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Character | 美桜ちゃんのひだまり広場</title>
+<link rel="icon" href="images/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body id="top">
+<div class="shell">
+  <div class="topbar">
+    <a href="index.html" aria-label="美桜ちゃんのひだまり広場 トップ（Gallery）へ移動">
+      <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+    </a>
+    <button type="button" class="btn btn-outline" data-menu-open aria-label="メニューを開く" aria-expanded="false" style="padding:6px 16px;">メニュー</button>
+  </div>
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-head">
+        <h1 class="sr-only">美桜ちゃんのひだまり広場</h1>
+        <a href="index.html" aria-label="美桜ちゃんのひだまり広場 トップ（Gallery）へ移動">
+          <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+        </a>
+        <p class="tagline">イラストと設定資料のアーカイブ</p>
+        <p class="count-chips">
+          <span>イラスト 9件</span>
+          <span>漫画 1件</span>
+          <span>記事 0件</span>
+          <span>小説 1作品</span>
+          <span>あいうえお 絵 29/46</span>
+        </p>
+      </div>
+      <nav class="side-nav" aria-label="サイトメニュー">
+          <a href="index.html" aria-label="メニュー：Gallery、キャラクターとイラストを表示">Gallery</a>
+          <a href="character.html" aria-label="メニュー：Character、キャラクターのプロフィールを表示" aria-current="page">Character</a>
+          <a href="comic.html" aria-label="メニュー：Comic、漫画を表示">Comic</a>
+          <a href="story.html" aria-label="メニュー：Story、小説を表示">Story</a>
+          <a href="aiueo.html" aria-label="メニュー：Aiueo、あいうえおを表示">Aiueo</a>
+          <a href="articles.html" aria-label="メニュー：Articles、記事を表示">Articles</a>
+      </nav>
+      <div class="sidebar-foot"><div class="check-band" aria-hidden="true"></div></div>
+    </div>
+  </aside>
+  <div class="mobile-menu" id="mobile-menu" hidden role="dialog" aria-modal="true" aria-label="サイトメニュー">
+    <button type="button" class="backdrop" data-menu-close aria-label="メニューを閉じる"></button>
+    <div class="panel">
+      <div class="close-row">
+        <button type="button" class="btn btn-outline" data-menu-close aria-label="メニューを閉じる" style="padding:6px 16px;">閉じる</button>
+      </div>
+    <div class="sidebar-inner">
+      <div class="sidebar-head">
+        <h1 class="sr-only">美桜ちゃんのひだまり広場</h1>
+        <a href="index.html" aria-label="美桜ちゃんのひだまり広場 トップ（Gallery）へ移動">
+          <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+        </a>
+        <p class="tagline">イラストと設定資料のアーカイブ</p>
+        <p class="count-chips">
+          <span>イラスト 9件</span>
+          <span>漫画 1件</span>
+          <span>記事 0件</span>
+          <span>小説 1作品</span>
+          <span>あいうえお 絵 29/46</span>
+        </p>
+      </div>
+      <nav class="side-nav" aria-label="サイトメニュー">
+          <a href="index.html" aria-label="メニュー：Gallery、キャラクターとイラストを表示">Gallery</a>
+          <a href="character.html" aria-label="メニュー：Character、キャラクターのプロフィールを表示" aria-current="page">Character</a>
+          <a href="comic.html" aria-label="メニュー：Comic、漫画を表示">Comic</a>
+          <a href="story.html" aria-label="メニュー：Story、小説を表示">Story</a>
+          <a href="aiueo.html" aria-label="メニュー：Aiueo、あいうえおを表示">Aiueo</a>
+          <a href="articles.html" aria-label="メニュー：Articles、記事を表示">Articles</a>
+      </nav>
+      <div class="sidebar-foot"><div class="check-band" aria-hidden="true"></div></div>
+    </div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <main>
+<section aria-label="Character">
+          <h2 class="section-title">Character<span class="sub">キャラクター</span></h2>
+          <p class="lead">キャラをタップすると、そのキャラのプロフィールが表示されます。ここでキャラを選んでも、イラストの絞り込みは変わりません。</p>
+          <div class="stage-frame">
+      <div class="stage-head">
+        <p class="grade-legend">
+          <span class="item"><span class="dot" style="background-color:#2e7d54"></span>1年生</span>
+          <span class="item"><span class="dot" style="background-color:#c74362"></span>2年生</span>
+          <span class="item"><span class="dot" style="background-color:#2f5da8"></span>3年生</span>
+        </p>
+      </div>
+      <div class="stage-body">
+        <div class="stage-area" id="stage-area" style="aspect-ratio: 2568 / 1045">
+          <div class="character-column" data-depth="6" data-tag="撫子ちゃん" data-grade="1" data-name-left="10.00" style="left:-5.101%;top:13.110%;width:23.598%;height:86.890%">
+            <button type="button" class="character-select" data-stage-tag="撫子ちゃん" aria-pressed="false" aria-label="撫子ちゃんのプロフィールを表示">
+              <img src="images/characters/nadeshiko.png" alt="撫子ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="5" data-tag="華恋ちゃん" data-grade="1" data-name-left="17.99" style="left:10.047%;top:13.110%;width:15.888%;height:86.890%">
+            <button type="button" class="character-select" data-stage-tag="華恋ちゃん" aria-pressed="false" aria-label="華恋ちゃんのプロフィールを表示">
+              <img src="images/characters/karen.webp" alt="華恋ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="4" data-tag="ひよりちゃん" data-grade="1" data-name-left="28.21" style="left:23.014%;top:15.311%;width:10.397%;height:84.211%">
+            <button type="button" class="character-select" data-stage-tag="ひよりちゃん" aria-pressed="false" aria-label="ひよりちゃんのプロフィールを表示">
+              <img src="images/characters/hiyori.png" alt="ひよりちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="7" data-tag="お義兄ちゃん" data-grade="2" data-name-left="34.50" style="left:21.336%;top:3.809%;width:25.989%;height:95.885%">
+            <button type="button" class="character-select" data-stage-tag="お義兄ちゃん" aria-pressed="false" aria-label="お義兄ちゃんのプロフィールを表示">
+              <img src="images/characters/onii.png" alt="お義兄ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="2" data-tag="美優ちゃん" data-grade="2" data-name-left="42.13" style="left:29.984%;top:13.110%;width:23.598%;height:86.890%">
+            <button type="button" class="character-select" data-stage-tag="美優ちゃん" aria-pressed="false" aria-label="美優ちゃんのプロフィールを表示">
+              <img src="images/characters/miyu.png" alt="美優ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="1" data-tag="美桜ちゃん" data-grade="2" data-name-left="53.41" style="left:41.277%;top:13.110%;width:23.598%;height:86.890%">
+            <button type="button" class="character-select" data-stage-tag="美桜ちゃん" aria-pressed="false" aria-label="美桜ちゃんのプロフィールを表示">
+              <img src="images/characters/mio.png" alt="美桜ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="0" data-tag="モモ" data-grade="" data-name-left="58.76" style="left:55.179%;top:68.708%;width:7.165%;height:31.292%">
+            <button type="button" class="character-select" data-stage-tag="モモ" aria-pressed="false" aria-label="モモのプロフィールを表示">
+              <img src="images/characters/momo.webp" alt="柴犬のモモのイラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="3" data-tag="茜ちゃん" data-grade="2" data-name-left="64.33" style="left:53.205%;top:10.335%;width:23.731%;height:89.751%">
+            <button type="button" class="character-select" data-stage-tag="茜ちゃん" aria-pressed="false" aria-label="茜ちゃんのプロフィールを表示">
+              <img src="images/characters/akane.png" alt="茜ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="4" data-tag="詩音ちゃん" data-grade="3" data-name-left="75.08" style="left:63.980%;top:13.110%;width:23.598%;height:86.890%">
+            <button type="button" class="character-select" data-stage-tag="詩音ちゃん" aria-pressed="false" aria-label="詩音ちゃんのプロフィールを表示">
+              <img src="images/characters/shion.png" alt="詩音ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="5" data-tag="雫ちゃん" data-grade="3" data-name-left="85.53" style="left:74.291%;top:13.569%;width:23.427%;height:86.354%">
+            <button type="button" class="character-select" data-stage-tag="雫ちゃん" aria-pressed="false" aria-label="雫ちゃんのプロフィールを表示">
+              <img src="images/characters/shizuku.png" alt="雫ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="6" data-tag="若葉ちゃん" data-grade="3" data-name-left="90.00" style="left:83.871%;top:12.880%;width:23.567%;height:86.871%">
+            <button type="button" class="character-select" data-stage-tag="若葉ちゃん" aria-pressed="false" aria-label="若葉ちゃんのプロフィールを表示">
+              <img src="images/characters/wakaba.png" alt="若葉ちゃんの全身イラスト">
+            </button>
+          </div>
+        </div>
+        <div class="stage-nameband" id="stage-nameband">
+          <span class="stage-name" id="stage-name" hidden></span>
+        </div>
+      </div>
+      <div class="check-band" aria-hidden="true"></div>
+    </div>
+          <div id="profile-area">
+            <p style="padding:40px 0;text-align:center;font-size:14px;color:var(--dim);">上のキャラをタップすると、プロフィールがここに表示されます。</p>
+          </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+      <div class="check-band" aria-hidden="true"></div>
+      <div class="footer-inner">
+        <div>
+          <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+          <p class="tagline" style="margin-top:8px;font-size:12px;">イラストと設定資料のアーカイブ</p>
+          <p class="footer-note">掲載内容は2026年11月5日時点のものです。</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html" aria-label="フッター：Galleryへ移動">Gallery</a>
+          <a href="character.html" aria-label="フッター：Characterへ移動">Character</a>
+          <a href="comic.html" aria-label="フッター：Comicへ移動">Comic</a>
+          <a href="story.html" aria-label="フッター：Storyへ移動">Story</a>
+          <a href="articles.html" aria-label="フッター：Articlesへ移動">Articles</a>
+          <a href="#top" class="btn btn-outline" aria-label="フッター：トップに戻る" style="padding:8px 16px;">トップに戻る</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+<script src="assets/site.js"></script>
+
+<script>
+// Stage selection shared logic: name band + pressed/dim states.
+function createStage(onSelect, pillLabel) {
+  var area = document.getElementById("stage-area");
+  var band = document.getElementById("stage-nameband");
+  var nameEl = document.getElementById("stage-name");
+  var selected = null;
+  function nameFontSize() {
+    var w = area ? area.clientWidth : 966;
+    return Math.max(9, Math.min(16, Math.round(w * (908 / 2568) * 0.055)));
+  }
+  function render() {
+    var fs = nameFontSize();
+    band.style.minHeight = fs + 4 + "px";
+    document.querySelectorAll(".character-column").forEach(function (col) {
+      var tag = col.getAttribute("data-tag");
+      var btn = col.querySelector(".character-select");
+      var active = selected === tag;
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
+      btn.classList.toggle("dimmed", selected !== null && !active);
+    });
+    if (selected) {
+      var col = document.querySelector('.character-column[data-tag="' + selected + '"]');
+      var grade = col.getAttribute("data-grade");
+      var left = col.getAttribute("data-name-left");
+      var dotColors = { "1": "#2e7d54", "2": "#c74362", "3": "#2f5da8" };
+      var html = "";
+      if (grade) {
+        var d = Math.max(6, Math.round(fs * 0.65));
+        html += '<span class="dot" style="width:' + d + 'px;height:' + d + 'px;background-color:' + dotColors[grade] + '"></span>';
+      }
+      html += '<span class="name" style="font-size:' + fs + 'px"></span>';
+      html += '<span class="pill" style="font-size:' + Math.max(8, fs - 1) + 'px">' + pillLabel + "</span>";
+      nameEl.innerHTML = html;
+      nameEl.querySelector(".name").textContent = selected;
+      nameEl.style.left = left + "%";
+      nameEl.style.fontSize = fs + "px";
+      nameEl.hidden = false;
+    } else {
+      nameEl.hidden = true;
+      nameEl.innerHTML = "";
+    }
+  }
+  document.querySelectorAll("[data-stage-tag]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      onSelect(btn.getAttribute("data-stage-tag"));
+    });
+  });
+  window.addEventListener("resize", render);
+  return {
+    setSelected: function (tag) { selected = tag; render(); },
+    getSelected: function () { return selected; },
+    render: render
+  };
+}
+</script>
+
+<script>
+var PROFILES = {"撫子ちゃん": {"tag": "撫子ちゃん", "grade": "高校1年生", "hair": "黒髪ロング（ヘアピン）", "eyes": "茶", "uniform": "紺ブレザー＋緑のストライプリボン、ピンクチェックのスカート、紺ハイソックス、茶色のローファー。きちっと着用している", "personality": "お淑やかで恥ずかしがり屋さん。まさに「大和撫子」という言葉がぴったりの子。控えめで自己主張は苦手だけど、いざという時には勇気を出して頑張る。ふんわりした雰囲気だけど、実は芯が強い一面もある。", "relationship": "", "note": "", "breed": "", "skill": "", "likes": ""}, "華恋ちゃん": {"tag": "華恋ちゃん", "grade": "高校1年生", "hair": "赤毛のツーサイドアップ（黒リボン）", "eyes": "赤", "uniform": "紺ブレザー＋白シャツ、緑のストライプリボン、ピンクチェックのスカート、紺ハイソックス、茶色のローファー。シャツの裾を出して着崩して着ている", "personality": "気分屋でツンデレ気質だけど、根は素直で情に厚い子。「別にあんたのためじゃないんだからね！」と言いながらも、結局助けてくれるツンデレの鑑。熱くなると一直線で、負けず嫌いなところがある。", "relationship": "", "note": "", "breed": "", "skill": "", "likes": ""}, "ひよりちゃん": {"tag": "ひよりちゃん", "grade": "高校1年生", "hair": "アッシュブロンドのロングツインテール（ピンクのリボン）", "eyes": "緑", "uniform": "紺ブレザー＋ピンクのセーター、緑のストライプリボン、ピンクチェックのスカート、白ニーソックス、茶色のローファー", "personality": "ほんわか優しい、ゆるふわ癒し系。誰とでも仲良くなれて、空気を和ませるのが得意。お花や動物が好きな、にこにこ天使。", "relationship": "", "note": "", "breed": "", "skill": "", "likes": ""}, "お義兄ちゃん": {"tag": "お義兄ちゃん", "grade": "高校2年生", "hair": "黒髪", "eyes": "黒", "uniform": "紺ブレザー＋赤系ストライプのネクタイ、チェック柄のズボン、茶色のローファー。眼鏡をかけている", "personality": "お調子者＆自称「学校一のゲーム神」。ノリが良くて明るい性格だけど、時々調子に乗りすぎて痛い目を見ることも。でも、なんだかんだで妹思いの一面もあって、憎めないヤツ。ゲームが好き。", "relationship": "美優ちゃんの義理の兄（美優ちゃんと同い年）", "note": "", "breed": "", "skill": "", "likes": "ゲーム"}, "美優ちゃん": {"tag": "美優ちゃん", "grade": "高校2年生", "hair": "毛先がピンクの淡い髪のツインテール（紺のシュシュ）", "eyes": "紫", "uniform": "ピンクのカーディガン（制服は美桜ちゃんと同系統）", "personality": "クール・上品・大人っぽい。落ち着いていてクールで、ちょっぴりツンデレ、でも実は照れ屋さん。意外と負けず嫌いで、お義兄ちゃんとはよく張り合っている。だけど本当はお義兄ちゃんのことをしっかり信頼している。なんだかんだで面倒見がいい、美桜ちゃんより少し大人びた印象で、一緒にいると安心感のあるタイプ。", "relationship": "美桜ちゃんの親友。お義兄ちゃん（名前はない）がいる", "note": "美優ちゃんは落ち着いた雰囲気の子。実はクールだけど、ぬいぐるみ集めが好き。", "breed": "", "skill": "", "likes": ""}, "美桜ちゃん": {"tag": "美桜ちゃん", "grade": "高校2年生", "hair": "金髪ツインテール（黒リボン）", "eyes": "青", "uniform": "紺ブレザー＋ベージュのカーディガン、胸元に赤いチェック柄リボン、ピンクチェックのスカート、黒ニーソックス（太ももが見える丈）、茶色のローファー", "personality": "元気・明るい・可愛い。明るく元気で、負けず嫌いだけど、根は素直で努力家。とにかくなんでもやってみる性格で、好奇心旺盛で楽しいことが大好きな、周囲まで明るくするムードメーカー。うちの不動のセンター。", "relationship": "親友は美優ちゃん。愛犬は柴犬のモモ", "note": "美桜ちゃんは元気で表情豊かな子。\n好きなものは柴犬とラーメン。", "breed": "", "skill": "", "likes": ""}, "モモ": {"tag": "モモ", "grade": "1歳", "hair": "毛の色は茶色", "eyes": "黒", "uniform": "赤い首輪", "personality": "柴犬にしては温厚。でもやっぱりツンデレ。", "relationship": "美桜ちゃんの愛犬", "note": "柴犬。特技は穴掘り。好きなものはお散歩と美桜ちゃん。", "breed": "柴犬", "skill": "穴掘り", "likes": "お散歩と美桜ちゃん"}, "茜ちゃん": {"tag": "茜ちゃん", "grade": "高校2年生", "hair": "金髪のショートボブ（赤いリボンのカチューシャ）", "eyes": "金色", "uniform": "紺ブレザー＋白シャツ、赤いストライプリボン、ピンクチェックのスカート、紺のショートソックス、茶色のローファー。シャツの裾を出して着崩して着ている", "personality": "明るくて元気いっぱい！とにかくポジティブで、周囲を笑顔にする太陽みたいな子。ちょっとおバカだけど、憎めない愛されキャラ。", "relationship": "", "note": "", "breed": "", "skill": "", "likes": ""}, "詩音ちゃん": {"tag": "詩音ちゃん", "grade": "高校3年生", "hair": "銀髪ロング（サイド編み込み＋紺リボン）", "eyes": "青", "uniform": "紺ブレザー＋青いストライプリボン、ピンクチェックのスカート、紺ハイソックス、茶色のローファー。きちっと着用している", "personality": "うちの子の中では一番お姉さん的存在。真面目で清楚、みんなを優しく見守る頼れる子。礼儀正しくてしっかり者だけど、実は甘いものに目がなく、スイーツの話になるとちょっとテンションが上がる。そんなギャップも魅力の一つ。", "relationship": "", "note": "", "breed": "", "skill": "", "likes": ""}, "雫ちゃん": {"tag": "雫ちゃん", "grade": "高校3年生", "hair": "黒髪（青インナー）", "eyes": "青", "uniform": "紺ブレザー＋青いストライプリボン、ピンクチェックのスカート、白ルーズソックス、茶色のローファー。首に黒いチョーカー", "personality": "クールビューティでちょっとミステリアス。一見クールだけど仲間思いで世話焼き。黒髪×青インナーの大人っぽいおしゃれさん。", "relationship": "", "note": "", "breed": "", "skill": "", "likes": ""}, "若葉ちゃん": {"tag": "若葉ちゃん", "grade": "高校3年生", "hair": "銀髪のショート（ウルフカット）", "eyes": "青緑", "uniform": "紺ブレザー＋青いストライプリボン、ピンクチェックのスカート、黒タイツ、茶色のローファー", "personality": "普段無口だけど、実は熱い心を持ってるクール系キャラ。なかなか表情を表に出さない子。", "relationship": "", "note": "", "breed": "", "skill": "", "likes": ""}};
+var PORTRAITS = {"撫子ちゃん": {"img": "images/characters/nadeshiko.png", "alt": "撫子ちゃんの全身イラスト"}, "華恋ちゃん": {"img": "images/characters/karen.webp", "alt": "華恋ちゃんの全身イラスト"}, "ひよりちゃん": {"img": "images/characters/hiyori.png", "alt": "ひよりちゃんの全身イラスト"}, "お義兄ちゃん": {"img": "images/characters/onii.png", "alt": "お義兄ちゃんの全身イラスト"}, "美優ちゃん": {"img": "images/characters/miyu.png", "alt": "美優ちゃんの全身イラスト"}, "美桜ちゃん": {"img": "images/characters/mio.png", "alt": "美桜ちゃんの全身イラスト"}, "モモ": {"img": "images/characters/momo.webp", "alt": "柴犬のモモのイラスト"}, "茜ちゃん": {"img": "images/characters/akane.png", "alt": "茜ちゃんの全身イラスト"}, "詩音ちゃん": {"img": "images/characters/shion.png", "alt": "詩音ちゃんの全身イラスト"}, "雫ちゃん": {"img": "images/characters/shizuku.png", "alt": "雫ちゃんの全身イラスト"}, "若葉ちゃん": {"img": "images/characters/wakaba.png", "alt": "若葉ちゃんの全身イラスト"}};
+var FURIGANA = {"美桜ちゃん": {"base": "美桜", "reading": "みお", "suffix": "ちゃん"}, "美優ちゃん": {"base": "美優", "reading": "みゆ", "suffix": "ちゃん"}, "茜ちゃん": {"base": "茜", "reading": "あかね", "suffix": "ちゃん"}, "詩音ちゃん": {"base": "詩音", "reading": "しおん", "suffix": "ちゃん"}, "華恋ちゃん": {"base": "華恋", "reading": "かれん", "suffix": "ちゃん"}, "撫子ちゃん": {"base": "撫子", "reading": "なでしこ", "suffix": "ちゃん"}, "雫ちゃん": {"base": "雫", "reading": "しずく", "suffix": "ちゃん"}, "若葉ちゃん": {"base": "若葉", "reading": "わかば", "suffix": "ちゃん"}, "お義兄ちゃん": {"base": "お義兄", "reading": "にい", "suffix": "ちゃん"}};
+var HUMAN_FIELDS = [
+  ["grade", "学年"], ["hair", "髪型"], ["eyes", "目の色"], ["uniform", "制服"],
+  ["personality", "性格"], ["relationship", "関係"], ["note", "紹介・メモ"]
+];
+var MOMO_FIELDS = [
+  ["breed", "犬種"], ["skill", "特技"], ["likes", "好きなもの"], ["relationship", "関係"],
+  ["note", "紹介・メモ"], ["grade", "年齢"], ["hair", "毛の色"], ["eyes", "目の色"],
+  ["uniform", "首輪"], ["personality", "性格"]
+];
+var MOMO_LEGACY = ["grade", "hair", "eyes", "uniform", "personality"];
+var area = document.getElementById("profile-area");
+
+function profileNameHtml(tag) {
+  var f = FURIGANA[tag];
+  if (!f) return "";
+  var span = document.createElement("span");
+  var ruby = document.createElement("ruby");
+  ruby.appendChild(document.createTextNode(f.base));
+  var rp1 = document.createElement("rp"); rp1.textContent = "(";
+  var rt = document.createElement("rt"); rt.textContent = f.reading;
+  var rp2 = document.createElement("rp"); rp2.textContent = ")";
+  ruby.appendChild(rp1); ruby.appendChild(rt); ruby.appendChild(rp2);
+  span.appendChild(ruby);
+  span.appendChild(document.createTextNode(f.suffix));
+  return span;
+}
+
+function renderProfile(tag) {
+  var p = PROFILES[tag];
+  var portrait = PORTRAITS[tag];
+  area.innerHTML = "";
+  if (!p || !portrait) return;
+  var wrap = document.createElement("div");
+  wrap.className = "profile-wrap";
+  var flex = document.createElement("div");
+  flex.className = "profile-flex";
+  var img = document.createElement("img");
+  img.className = "profile-portrait";
+  img.src = portrait.img;
+  img.alt = portrait.alt;
+  flex.appendChild(img);
+  var main = document.createElement("div");
+  main.className = "profile-main";
+  var h = document.createElement("h3");
+  h.className = "profile-name-title";
+  var nameNode = profileNameHtml(tag);
+  if (nameNode) h.appendChild(nameNode); else h.textContent = tag;
+  main.appendChild(h);
+  var dl = document.createElement("dl");
+  dl.className = "profile-dl";
+  var fields = tag === "モモ" ? MOMO_FIELDS : HUMAN_FIELDS;
+  fields.forEach(function ([key, label]) {
+    var value = p[key] || "";
+    if (tag === "モモ" && MOMO_LEGACY.indexOf(key) >= 0 && !value) return;
+    var row = document.createElement("div");
+    row.className = "profile-row";
+    var dt = document.createElement("dt");
+    dt.textContent = label;
+    var dd = document.createElement("dd");
+    if (value) {
+      dd.textContent = value;
+    } else {
+      var unset = document.createElement("span");
+      unset.className = "unset";
+      unset.textContent = "未設定";
+      dd.appendChild(unset);
+    }
+    row.appendChild(dt);
+    row.appendChild(dd);
+    dl.appendChild(row);
+  });
+  main.appendChild(dl);
+  var actions = document.createElement("div");
+  actions.className = "profile-actions";
+  var link = document.createElement("a");
+  link.className = "btn btn-outline-navy";
+  link.href = "index.html?char=" + encodeURIComponent(tag);
+  link.setAttribute("aria-label", tag + "のイラストを見る");
+  link.textContent = "このキャラのイラストを見る";
+  actions.appendChild(link);
+  main.appendChild(actions);
+  flex.appendChild(main);
+  wrap.appendChild(flex);
+  area.appendChild(wrap);
+}
+
+var stage = createStage(function (tag) {
+  stage.setSelected(tag);
+  renderProfile(tag);
+}, "選択中");
+</script>
+
+</body>
+</html>

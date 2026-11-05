@@ -1,0 +1,732 @@
+:root {
+  color-scheme: light dark;
+  --bg: #fdf3f6;
+  --surface: #fffcfd;
+  --surface-alt: #fbe8ed;
+  --text: #402931;
+  --dim: #8f6b78;
+  --border: #f1cdd8;
+  --accent: #c74362;
+  --navy: #633043;
+  --primary: #7a3550;
+  --chrome: #fbdfe7;
+  --chrome-hover: #f6cfdb;
+  --pink: #e2628a;
+  --radius: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #221318;
+    --surface: #2d1c22;
+    --surface-alt: #3a2430;
+    --text: #fbeef2;
+    --dim: #c9a3b0;
+    --border: #4d2f3c;
+    --accent: #f0708c;
+    --navy: #f0b9c9;
+    --primary: #a34a68;
+    --chrome: #2c1a21;
+    --chrome-hover: #3d2430;
+    --pink: #f07f9f;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.font-display {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+}
+
+img { max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; background: none; border: none; padding: 0; }
+select { font: inherit; }
+
+/* 淡い桜色のチェック柄の帯 */
+.check-band {
+  background-color: #f3b9ca;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(214, 80, 115, 0.55) 0 2px, transparent 2px 14px),
+    repeating-linear-gradient(90deg, rgba(214, 80, 115, 0.55) 0 2px, transparent 2px 14px),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.35) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.35) 0 1px, transparent 1px 7px);
+  height: 8px;
+  width: 100%;
+}
+
+/* ---------- layout ---------- */
+.shell { min-height: 100vh; }
+@media (min-width: 1024px) {
+  .shell { display: flex; }
+}
+.sidebar {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .sidebar {
+    display: block;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 264px;
+    flex-shrink: 0;
+    overflow-y: auto;
+    background: var(--chrome);
+  }
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--chrome);
+  padding: 10px 16px;
+}
+@media (min-width: 1024px) {
+  .topbar { display: none; }
+}
+.topbar .logo-img { height: 40px; width: auto; max-width: 62vw; border-radius: 6px; border: 1px solid var(--border); background: #fff; display: block; }
+.content-wrap { flex: 1; min-width: 0; display: flex; flex-direction: column; min-height: 100vh; }
+main {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1024px;
+  padding: 16px 16px 48px;
+  flex: 1;
+}
+
+.sidebar-inner { display: flex; min-height: 100%; flex-direction: column; }
+.sidebar-head { padding: 24px 20px 20px; }
+.sidebar-head .logo-img { display: block; width: 100%; border-radius: var(--radius); border: 1px solid var(--border); background: #fff; }
+.tagline { margin: 12px 0 0; font-size: 14px; color: var(--dim); }
+.count-chips { margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.count-chips span {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.side-nav { display: flex; flex-direction: column; gap: 4px; padding: 0 12px 16px; }
+.side-nav a {
+  display: block;
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.side-nav a:hover { background: var(--chrome-hover); }
+.side-nav a[aria-current="page"] { background: var(--surface); color: var(--navy); }
+.sidebar-foot { margin-top: auto; padding-top: 24px; }
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+.mobile-menu[hidden] { display: none; }
+.mobile-menu .backdrop { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.6); border: none; width: 100%; height: 100%; cursor: pointer; }
+.mobile-menu .panel {
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 280px;
+  max-width: 85vw;
+  overflow-y: auto;
+  background: var(--chrome);
+}
+.mobile-menu .close-row { display: flex; justify-content: flex-end; padding: 12px 12px 0; }
+
+/* ---------- footer ---------- */
+footer.site-footer { background: var(--chrome); }
+.footer-inner {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1024px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (min-width: 640px) {
+  .footer-inner { flex-direction: row; align-items: center; justify-content: space-between; }
+}
+.footer-inner .logo-img { display: block; width: 200px; max-width: 60vw; border-radius: var(--radius); border: 1px solid var(--border); background: #fff; }
+.footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.footer-links a { font-size: 14px; font-weight: 700; text-decoration: none; }
+.footer-links a:hover { text-decoration: underline; }
+.footer-note { margin: 8px 0 0; font-size: 12px; color: var(--dim); }
+
+/* ---------- headings & text ---------- */
+h2.section-title {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--navy);
+  margin: 0;
+}
+h2.section-title .sub { margin-left: 8px; font-size: 12px; font-weight: 700; color: var(--dim); vertical-align: middle; }
+h3.block-title {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--navy);
+  margin: 0;
+}
+.lead { margin: 4px 0 0; font-size: 14px; line-height: 1.65; color: var(--dim); }
+.lead-xs { margin: 4px 0 0; font-size: 12px; line-height: 1.65; color: var(--dim); }
+.count-line { margin: 4px 0 0; font-size: 14px; color: var(--dim); }
+
+/* ---------- buttons & chips ---------- */
+.btn {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+.btn-primary { background: var(--primary); color: #fff; border: 1px solid var(--primary); }
+.btn-accent { background: var(--accent); color: #fff; border: 1px solid var(--accent); }
+.btn-outline { border: 1px solid var(--border); background: var(--surface); }
+.btn-outline-navy { border: 1px solid var(--navy); color: var(--navy); background: transparent; }
+.btn[disabled] { opacity: 0.4; cursor: default; }
+.link-back { font-size: 14px; font-weight: 700; color: var(--navy); text-decoration: underline; cursor: pointer; }
+
+.chip {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+.chip[aria-pressed="true"] { border-color: var(--pink); background: var(--pink); color: #fff; }
+.tag-chip {
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--pink);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+.tag-chip[aria-pressed="true"] { background: var(--pink); color: #fff; }
+
+.segmented {
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 4px;
+}
+.segmented button {
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dim);
+  cursor: pointer;
+}
+.segmented button[aria-pressed="true"] { background: var(--primary); color: #fff; }
+.sort-select {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.filter-row { margin-top: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.filter-row .spacer { margin-left: auto; display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.filter-row .spacer .dim { color: var(--dim); }
+.tag-row { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* ---------- character stage ---------- */
+.stage-frame {
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+}
+.stage-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  padding: 12px 12px 0;
+}
+.stage-showall {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--dim);
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.stage-showall:hover { border-color: var(--pink); color: var(--pink); }
+.stage-showall.active { border-color: var(--primary); background: var(--primary); color: #fff; }
+.stage-showall.active:hover { border-color: var(--pink); background: var(--pink); color: #fff; }
+.grade-legend {
+  margin: 0 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--dim);
+}
+.grade-legend .item { display: flex; align-items: center; gap: 4px; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 999px; }
+.stage-body { padding: 8px 8px 0; }
+@media (min-width: 640px) { .stage-body { padding: 8px 12px 0; } }
+.stage-area { position: relative; width: 100%; }
+.character-column { position: absolute; }
+.character-column[data-depth="0"] { z-index: 13; }
+.character-column[data-depth="1"] { z-index: 12; }
+.character-column[data-depth="2"] { z-index: 11; }
+.character-column[data-depth="3"] { z-index: 10; }
+.character-column[data-depth="4"] { z-index: 9; }
+.character-column[data-depth="5"] { z-index: 8; }
+.character-column[data-depth="6"] { z-index: 7; }
+.character-column[data-depth="7"] { z-index: 6; }
+.character-column[data-depth]:has(> .character-select:hover),
+.character-column[data-depth]:has(> .character-select:focus-visible),
+.character-column:has(> .character-select:hover),
+.character-column:has(> .character-select:focus-visible) { z-index: 20; }
+
+.character-select {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: opacity 0.15s ease-out;
+}
+.character-select img {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s ease-out, filter 0.2s ease-out;
+  will-change: transform;
+}
+.character-select:active img { transform: scale(1.03); }
+.character-select:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; border-radius: var(--radius); }
+.character-select[aria-pressed="true"] img {
+  filter: drop-shadow(0 0 9px rgba(226, 98, 138, 0.55));
+}
+.character-select.dimmed { opacity: 0.5; }
+@media (hover: hover) {
+  .character-select:hover img,
+  .character-select:focus-visible img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 9px rgba(226, 98, 138, 0.8)) drop-shadow(0 8px 12px rgba(99, 48, 67, 0.28));
+  }
+  .character-select:hover .character-name,
+  .character-select:focus-visible .character-name { color: var(--pink); }
+}
+.stage-nameband { position: relative; margin-top: 4px; padding-bottom: 8px; }
+.stage-name {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2px 4px;
+  text-align: center;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+.stage-name .name {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-weight: 900;
+  color: var(--navy);
+}
+.stage-name .pill {
+  border-radius: 999px;
+  background: var(--pink);
+  color: #fff;
+  padding: 1px 6px;
+  font-weight: 700;
+}
+@media (prefers-reduced-motion: reduce) {
+  .character-select img { transition: none; }
+  .character-select:hover img,
+  .character-select:focus-visible img,
+  .character-select:active img { transform: none; }
+}
+
+/* ---------- cards grid ---------- */
+.card-grid {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media (min-width: 640px) { .card-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+@media (min-width: 1024px) { .card-grid.gallery-grid { grid-template-columns: repeat(4, 1fr); } }
+.card { display: block; width: 100%; text-align: left; cursor: pointer; text-decoration: none; }
+.card .thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+}
+.card .thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.card .badge {
+  position: absolute;
+  top: 8px; left: 8px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.card .card-title {
+  margin-top: 8px;
+  display: block;
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card .card-date { display: block; font-size: 12px; color: var(--dim); }
+.card-tags { margin-top: 4px; display: flex; flex-wrap: wrap; gap: 4px; }
+.x-link { margin-top: 4px; display: inline-block; font-size: 12px; font-weight: 700; color: var(--navy); text-decoration: underline; }
+
+.empty-state { padding: 64px 0; text-align: center; }
+.empty-state .empty-title {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+}
+.empty-state p { margin: 8px 0 0; font-size: 14px; color: var(--dim); }
+
+/* ---------- profile ---------- */
+.profile-wrap { margin-top: 24px; }
+.profile-flex { display: flex; flex-direction: column; gap: 16px; }
+@media (min-width: 640px) {
+  .profile-flex { flex-direction: row; align-items: flex-start; }
+}
+.profile-portrait { height: 260px; width: auto; flex-shrink: 0; align-self: center; object-fit: contain; }
+@media (min-width: 640px) { .profile-portrait { align-self: flex-start; } }
+.profile-main { min-width: 0; flex: 1; }
+.profile-name-title {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--navy);
+  margin: 0;
+}
+.profile-name-title ruby { ruby-align: center; }
+.profile-name-title rt { font-size: 11px; line-height: 1.3; font-weight: 700; letter-spacing: 0.08em; color: var(--dim); }
+.profile-dl { margin: 16px 0 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.profile-row {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.profile-row:last-child { border-bottom: none; }
+.profile-row dt { font-size: 14px; font-weight: 700; color: var(--dim); margin: 0; }
+.profile-row dd { font-size: 14px; line-height: 1.65; white-space: pre-wrap; margin: 0; }
+.profile-row dd .unset { color: var(--dim); }
+.profile-actions { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 8px; }
+
+/* ---------- comic / story readers ---------- */
+.reader-head-title {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 900;
+  color: var(--navy);
+  margin: 16px 0 0;
+}
+.meta-line { margin: 8px 0 0; font-size: 14px; color: var(--dim); }
+.comic-pages { margin-top: 20px; display: flex; flex-direction: column; }
+.comic-page { margin: 0 auto; width: 100%; max-width: 672px; }
+.comic-page img { width: 100%; display: block; }
+.comic-page figcaption { padding: 8px 0; text-align: center; font-size: 12px; color: var(--dim); }
+.the-end { margin-top: 8px; text-align: center; font-size: 14px; color: var(--dim); }
+.reader-nav { margin-top: 24px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding-bottom: 8px; }
+
+.story-flex { margin-top: 16px; display: flex; flex-direction: column; gap: 20px; }
+@media (min-width: 640px) { .story-flex { flex-direction: row; } }
+.story-cover { width: 100%; flex-shrink: 0; border-radius: var(--radius); border: 1px solid var(--border); object-fit: cover; }
+@media (min-width: 640px) { .story-cover { width: 224px; } }
+.story-intro { margin: 16px 0 0; font-size: 16px; line-height: 2; white-space: pre-wrap; }
+.episode-list { margin: 12px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.episode-list a {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.episode-list .ep-title {
+  display: block;
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.episode-list .ep-meta { margin-top: 2px; display: block; font-size: 12px; color: var(--dim); }
+.episode-list .ep-go { flex-shrink: 0; font-size: 14px; font-weight: 700; color: var(--pink); }
+.episode-body { margin: 24px auto 0; width: 100%; max-width: 672px; }
+.episode-body p { font-size: 16px; line-height: 2; white-space: pre-wrap; margin: 0; }
+.episode-body figure { margin: 24px 0; }
+.episode-body figure img { width: 100%; border-radius: var(--radius); border: 1px solid var(--border); display: block; }
+
+.story-card-grid {
+  margin: 16px 0 0; padding: 0; list-style: none;
+  display: grid; grid-template-columns: 1fr; gap: 12px;
+}
+@media (min-width: 640px) { .story-card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .story-card-grid { grid-template-columns: repeat(3, 1fr); } }
+.story-card {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  text-decoration: none;
+}
+.story-card img.cover { aspect-ratio: 3 / 4; width: 100%; object-fit: cover; display: block; }
+.story-card .no-cover {
+  aspect-ratio: 3 / 4; width: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--surface-alt); font-size: 14px; color: var(--dim);
+}
+.story-card .body { display: block; padding: 12px 16px 16px; }
+.story-card .story-title {
+  display: block;
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: 16px; line-height: 1.4; font-weight: 700; color: var(--navy);
+}
+.story-card .story-meta { margin-top: 4px; display: block; font-size: 12px; color: var(--dim); }
+.story-card .story-excerpt { margin-top: 8px; display: block; font-size: 14px; line-height: 1.65; }
+
+/* ---------- aiueo ---------- */
+.progress-box {
+  margin-top: 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 12px 16px;
+}
+.progress-box .progress-text { margin: 0; font-size: 14px; font-weight: 700; color: var(--navy); }
+.progress-box .progress-text .normal { margin-left: 12px; font-weight: 400; color: var(--dim); }
+.progress-bar { margin-top: 8px; height: 10px; overflow: hidden; border-radius: 999px; background: var(--surface-alt); }
+.progress-bar > div { height: 100%; border-radius: 999px; background: var(--accent); }
+.aiueo-row { margin-top: 24px; }
+.aiueo-row h3 {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: 16px; font-weight: 900; color: var(--navy); margin: 0;
+}
+.aiueo-row h3 .row-count { margin-left: 8px; font-size: 12px; font-weight: 700; color: var(--dim); }
+.aiueo-grid {
+  margin: 8px 0 0; padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+}
+@media (min-width: 640px) { .aiueo-grid { gap: 12px; } }
+.aiueo-cell { position: relative; min-width: 0; }
+.aiueo-cell .cell-btn { display: block; width: 100%; text-align: left; cursor: pointer; }
+.aiueo-cell .cell-box {
+  position: relative;
+  display: block;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+}
+.aiueo-cell .cell-box.quote-only { border: 1px dashed var(--pink); }
+.aiueo-cell .cell-box.undecided { background: var(--surface); }
+.aiueo-cell .cell-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.aiueo-cell .kana-chip {
+  position: absolute; top: 4px; left: 4px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 900;
+}
+.aiueo-cell .placeholder {
+  display: flex; height: 100%; width: 100%;
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: 4px; padding: 0 4px; text-align: center;
+}
+.aiueo-cell .placeholder .big-kana {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: 24px; font-weight: 900; color: var(--navy);
+}
+@media (min-width: 640px) { .aiueo-cell .placeholder .big-kana { font-size: 30px; } }
+.aiueo-cell .placeholder .big-kana.dim { color: var(--dim); }
+.aiueo-cell .placeholder .quote-text {
+  font-size: 11px; line-height: 1.4; font-weight: 700;
+  display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;
+}
+@media (min-width: 640px) { .aiueo-cell .placeholder .quote-text { font-size: 12px; } }
+.aiueo-cell .placeholder .note-small { font-size: 10px; font-weight: 700; color: var(--dim); }
+.aiueo-cell .cell-quote {
+  margin-top: 4px; display: block;
+  font-size: 12px; font-weight: 700;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* ---------- dialogs (viewers) ---------- */
+.dialog-backdrop {
+  position: fixed; inset: 0; z-index: 50;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.7);
+}
+.dialog-backdrop[hidden] { display: none; }
+.dialog-card-wrap { margin: 0 auto; width: 100%; max-width: 672px; padding: 32px 16px; }
+.dialog-card {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+}
+.dialog-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border-bottom: 1px solid var(--border);
+  padding: 12px 16px;
+}
+.dialog-head .dialog-title {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: 20px; font-weight: 900; color: var(--navy); margin: 0;
+}
+.dialog-head .dialog-title .status { margin-left: 8px; font-size: 12px; font-weight: 700; color: var(--dim); }
+.dialog-close {
+  border-radius: 999px; border: 1px solid var(--border);
+  padding: 6px 16px; font-size: 14px; font-weight: 700; cursor: pointer;
+}
+.dialog-card .dialog-img { max-height: 62vh; width: 100%; background: var(--surface-alt); object-fit: contain; display: block; }
+.dialog-body { padding: 16px; }
+.dialog-body .big-quote { margin: 0; font-size: 18px; line-height: 1.65; font-weight: 700; white-space: pre-wrap; }
+.dialog-body .memo-line { margin: 8px 0 0; font-size: 14px; color: var(--dim); }
+.dialog-body .undecided-text { margin: 0; font-size: 14px; color: var(--dim); }
+.dialog-nav { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+.dialog-nav button {
+  border-radius: 999px; border: 1px solid var(--border);
+  padding: 8px 16px; font-size: 14px; font-weight: 700; cursor: pointer;
+}
+
+/* ---------- gallery viewer ---------- */
+.gallery-viewer {
+  position: fixed; inset: 0; z-index: 40;
+  display: flex; flex-direction: column;
+  background: rgba(0, 0, 0, 0.95);
+  color: #fff;
+}
+.gallery-viewer[hidden] { display: none; }
+.viewer-head { display: flex; align-items: center; gap: 8px; padding: 12px 12px 8px; }
+@media (min-width: 640px) { .viewer-head { padding: 12px 16px 8px; } }
+.viewer-head .titles { min-width: 0; flex: 1; }
+.viewer-head .v-title { margin: 0; font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (min-width: 640px) { .viewer-head .v-title { font-size: 16px; } }
+.viewer-head .v-meta { margin: 0; font-size: 12px; color: rgba(255, 255, 255, 0.7); }
+.viewer-close {
+  flex-shrink: 0;
+  border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 8px 16px; font-size: 14px; font-weight: 700; color: #fff; cursor: pointer;
+}
+.viewer-stage { min-height: 0; flex: 1; overflow: auto; overscroll-behavior: contain; position: relative; }
+.viewer-stage .sizer { position: relative; margin: 0 auto; }
+.viewer-stage img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  max-height: none;
+  cursor: zoom-in;
+}
+.viewer-controls {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px;
+  padding: 8px 8px 12px;
+}
+@media (min-width: 640px) { .viewer-controls { gap: 8px; padding: 8px 16px 12px; } }
+.viewer-controls button {
+  flex-shrink: 0;
+  border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 8px 12px; font-size: 14px; font-weight: 700; color: #fff; cursor: pointer;
+}
+.viewer-controls button[disabled] { opacity: 0.4; cursor: default; }
+.viewer-controls button.active { border-color: var(--pink); background: var(--pink); }
+.viewer-controls .zoom-pct { width: 48px; flex-shrink: 0; text-align: center; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.viewer-controls .hint { margin: 0 auto; font-size: 12px; color: rgba(255, 255, 255, 0.6); display: none; }
+@media (min-width: 640px) { .viewer-controls .hint { display: block; } }
+.viewer-info {
+  max-height: 42vh; overflow-y: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--surface);
+  color: var(--text);
+  padding: 16px;
+}
+@media (min-width: 640px) { .viewer-info { padding: 16px 24px; } }
+.viewer-info h2 {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: 20px; font-weight: 900; color: var(--navy); margin: 0;
+}
+.viewer-info .info-meta { margin: 4px 0 0; font-size: 14px; color: var(--dim); }
+.viewer-info .info-tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+.viewer-info .info-tags button {
+  border-radius: 999px; border: 1px solid var(--border); background: var(--surface);
+  padding: 4px 12px; font-size: 14px; font-weight: 700; color: var(--pink); cursor: pointer;
+}
+.viewer-info .info-memo { margin: 12px 0 0; font-size: 14px; line-height: 1.65; white-space: pre-wrap; }
+.viewer-info .info-actions { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 8px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}

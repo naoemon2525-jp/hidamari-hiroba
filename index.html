@@ -4,17 +4,682 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>美桜ちゃんのひだまり広場</title>
-<style>
-  body { margin:0; font-family: sans-serif; background:#fff5f7; color:#5b2333; display:flex; min-height:100vh; align-items:center; justify-content:center; }
-  main { text-align:center; padding:2rem; }
-  h1 { font-size:1.8rem; margin-bottom:.5rem; }
-  p { opacity:.8; }
-</style>
+<link rel="icon" href="images/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-<main>
-  <h1>🌸 美桜ちゃんのひだまり広場</h1>
-  <p>引っ越し準備中だよ。もう少し待っててね。</p>
-</main>
+<body id="top">
+<div class="shell">
+  <div class="topbar">
+    <a href="index.html" aria-label="美桜ちゃんのひだまり広場 トップ（Gallery）へ移動">
+      <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+    </a>
+    <button type="button" class="btn btn-outline" data-menu-open aria-label="メニューを開く" aria-expanded="false" style="padding:6px 16px;">メニュー</button>
+  </div>
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-head">
+        <h1 class="sr-only">美桜ちゃんのひだまり広場</h1>
+        <a href="index.html" aria-label="美桜ちゃんのひだまり広場 トップ（Gallery）へ移動">
+          <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+        </a>
+        <p class="tagline">イラストと設定資料のアーカイブ</p>
+        <p class="count-chips">
+          <span>イラスト 9件</span>
+          <span>漫画 1件</span>
+          <span>記事 0件</span>
+          <span>小説 1作品</span>
+          <span>あいうえお 絵 29/46</span>
+        </p>
+      </div>
+      <nav class="side-nav" aria-label="サイトメニュー">
+          <a href="index.html" aria-label="メニュー：Gallery、キャラクターとイラストを表示" aria-current="page">Gallery</a>
+          <a href="character.html" aria-label="メニュー：Character、キャラクターのプロフィールを表示">Character</a>
+          <a href="comic.html" aria-label="メニュー：Comic、漫画を表示">Comic</a>
+          <a href="story.html" aria-label="メニュー：Story、小説を表示">Story</a>
+          <a href="aiueo.html" aria-label="メニュー：Aiueo、あいうえおを表示">Aiueo</a>
+          <a href="articles.html" aria-label="メニュー：Articles、記事を表示">Articles</a>
+      </nav>
+      <div class="sidebar-foot"><div class="check-band" aria-hidden="true"></div></div>
+    </div>
+  </aside>
+  <div class="mobile-menu" id="mobile-menu" hidden role="dialog" aria-modal="true" aria-label="サイトメニュー">
+    <button type="button" class="backdrop" data-menu-close aria-label="メニューを閉じる"></button>
+    <div class="panel">
+      <div class="close-row">
+        <button type="button" class="btn btn-outline" data-menu-close aria-label="メニューを閉じる" style="padding:6px 16px;">閉じる</button>
+      </div>
+    <div class="sidebar-inner">
+      <div class="sidebar-head">
+        <h1 class="sr-only">美桜ちゃんのひだまり広場</h1>
+        <a href="index.html" aria-label="美桜ちゃんのひだまり広場 トップ（Gallery）へ移動">
+          <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+        </a>
+        <p class="tagline">イラストと設定資料のアーカイブ</p>
+        <p class="count-chips">
+          <span>イラスト 9件</span>
+          <span>漫画 1件</span>
+          <span>記事 0件</span>
+          <span>小説 1作品</span>
+          <span>あいうえお 絵 29/46</span>
+        </p>
+      </div>
+      <nav class="side-nav" aria-label="サイトメニュー">
+          <a href="index.html" aria-label="メニュー：Gallery、キャラクターとイラストを表示" aria-current="page">Gallery</a>
+          <a href="character.html" aria-label="メニュー：Character、キャラクターのプロフィールを表示">Character</a>
+          <a href="comic.html" aria-label="メニュー：Comic、漫画を表示">Comic</a>
+          <a href="story.html" aria-label="メニュー：Story、小説を表示">Story</a>
+          <a href="aiueo.html" aria-label="メニュー：Aiueo、あいうえおを表示">Aiueo</a>
+          <a href="articles.html" aria-label="メニュー：Articles、記事を表示">Articles</a>
+      </nav>
+      <div class="sidebar-foot"><div class="check-band" aria-hidden="true"></div></div>
+    </div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <main>
+<h2 class="section-title">Gallery<span class="sub">イラスト・設定資料</span></h2>
+        <section aria-label="キャラクターから探す" style="margin-top:16px;">
+          <h3 class="block-title">キャラクターから探す</h3>
+          <p class="lead-xs">キャラをタップすると、そのキャラのタグが付いたイラストだけが表示されます。もう一度タップすると、すべて表示に戻ります。タグが付いていないイラストは「すべて」のときだけ表示されます。全員が横一列に並んでいます。</p>
+          <div class="stage-frame">
+      <div class="stage-head">
+        <button type="button" class="stage-showall" id="stage-showall">全て表示</button>
+        <p class="grade-legend">
+          <span class="item"><span class="dot" style="background-color:#2e7d54"></span>1年生</span>
+          <span class="item"><span class="dot" style="background-color:#c74362"></span>2年生</span>
+          <span class="item"><span class="dot" style="background-color:#2f5da8"></span>3年生</span>
+        </p>
+      </div>
+      <div class="stage-body">
+        <div class="stage-area" id="stage-area" style="aspect-ratio: 2568 / 1045">
+          <div class="character-column" data-depth="6" data-tag="撫子ちゃん" data-grade="1" data-name-left="10.00" style="left:-5.101%;top:13.110%;width:23.598%;height:86.890%">
+            <button type="button" class="character-select" data-stage-tag="撫子ちゃん" aria-pressed="false" aria-label="撫子ちゃんのイラストだけを表示">
+              <img src="images/characters/nadeshiko.png" alt="撫子ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="5" data-tag="華恋ちゃん" data-grade="1" data-name-left="17.99" style="left:10.047%;top:13.110%;width:15.888%;height:86.890%">
+            <button type="button" class="character-select" data-stage-tag="華恋ちゃん" aria-pressed="false" aria-label="華恋ちゃんのイラストだけを表示">
+              <img src="images/characters/karen.webp" alt="華恋ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="4" data-tag="ひよりちゃん" data-grade="1" data-name-left="28.21" style="left:23.014%;top:15.311%;width:10.397%;height:84.211%">
+            <button type="button" class="character-select" data-stage-tag="ひよりちゃん" aria-pressed="false" aria-label="ひよりちゃんのイラストだけを表示">
+              <img src="images/characters/hiyori.png" alt="ひよりちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="7" data-tag="お義兄ちゃん" data-grade="2" data-name-left="34.50" style="left:21.336%;top:3.809%;width:25.989%;height:95.885%">
+            <button type="button" class="character-select" data-stage-tag="お義兄ちゃん" aria-pressed="false" aria-label="お義兄ちゃんのイラストだけを表示">
+              <img src="images/characters/onii.png" alt="お義兄ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="2" data-tag="美優ちゃん" data-grade="2" data-name-left="42.13" style="left:29.984%;top:13.110%;width:23.598%;height:86.890%">
+            <button type="button" class="character-select" data-stage-tag="美優ちゃん" aria-pressed="false" aria-label="美優ちゃんのイラストだけを表示">
+              <img src="images/characters/miyu.png" alt="美優ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="1" data-tag="美桜ちゃん" data-grade="2" data-name-left="53.41" style="left:41.277%;top:13.110%;width:23.598%;height:86.890%">
+            <button type="button" class="character-select" data-stage-tag="美桜ちゃん" aria-pressed="false" aria-label="美桜ちゃんのイラストだけを表示">
+              <img src="images/characters/mio.png" alt="美桜ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="0" data-tag="モモ" data-grade="" data-name-left="58.76" style="left:55.179%;top:68.708%;width:7.165%;height:31.292%">
+            <button type="button" class="character-select" data-stage-tag="モモ" aria-pressed="false" aria-label="モモのイラストだけを表示">
+              <img src="images/characters/momo.webp" alt="柴犬のモモのイラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="3" data-tag="茜ちゃん" data-grade="2" data-name-left="64.33" style="left:53.205%;top:10.335%;width:23.731%;height:89.751%">
+            <button type="button" class="character-select" data-stage-tag="茜ちゃん" aria-pressed="false" aria-label="茜ちゃんのイラストだけを表示">
+              <img src="images/characters/akane.png" alt="茜ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="4" data-tag="詩音ちゃん" data-grade="3" data-name-left="75.08" style="left:63.980%;top:13.110%;width:23.598%;height:86.890%">
+            <button type="button" class="character-select" data-stage-tag="詩音ちゃん" aria-pressed="false" aria-label="詩音ちゃんのイラストだけを表示">
+              <img src="images/characters/shion.png" alt="詩音ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="5" data-tag="雫ちゃん" data-grade="3" data-name-left="85.53" style="left:74.291%;top:13.569%;width:23.427%;height:86.354%">
+            <button type="button" class="character-select" data-stage-tag="雫ちゃん" aria-pressed="false" aria-label="雫ちゃんのイラストだけを表示">
+              <img src="images/characters/shizuku.png" alt="雫ちゃんの全身イラスト">
+            </button>
+          </div>
+          <div class="character-column" data-depth="6" data-tag="若葉ちゃん" data-grade="3" data-name-left="90.00" style="left:83.871%;top:12.880%;width:23.567%;height:86.871%">
+            <button type="button" class="character-select" data-stage-tag="若葉ちゃん" aria-pressed="false" aria-label="若葉ちゃんのイラストだけを表示">
+              <img src="images/characters/wakaba.png" alt="若葉ちゃんの全身イラスト">
+            </button>
+          </div>
+        </div>
+        <div class="stage-nameband" id="stage-nameband">
+          <span class="stage-name" id="stage-name" hidden></span>
+        </div>
+      </div>
+      <div class="check-band" aria-hidden="true"></div>
+    </div>
+          <p id="char-filter-note" style="margin-top:12px;font-size:14px;" hidden></p>
+        </section>
+
+        <div style="margin-top:32px;">
+          <h3 class="block-title">イラスト一覧</h3>
+          <p class="count-line" id="gallery-count"></p>
+          <div class="filter-row">
+            <div class="segmented" role="group" aria-label="カテゴリで絞り込み">
+              <button type="button" data-category="all" aria-pressed="true">すべて</button>
+              <button type="button" data-category="illustration" aria-pressed="false">イラスト</button>
+              <button type="button" data-category="reference" aria-pressed="false">設定資料</button>
+            </div>
+            <label class="spacer">
+              <span class="dim">並べ替え</span>
+              <select id="gallery-sort" class="sort-select" aria-label="日付の並べ替え">
+                <option value="new">日付が新しい順</option>
+                <option value="old">日付が古い順</option>
+              </select>
+            </label>
+          </div>
+          <div class="tag-row" id="gallery-tags" aria-label="タグで絞り込み"></div>
+          <div id="gallery-empty" class="empty-state" hidden>
+            <p class="empty-title" id="gallery-empty-title"></p>
+            <p id="gallery-empty-text"></p>
+            <p style="margin-top:20px;"><button type="button" class="btn btn-outline" id="gallery-reset">絞り込みをリセット</button></p>
+          </div>
+          <ul class="card-grid gallery-grid" id="gallery-grid"></ul>
+        </div>
+
+        <div class="gallery-viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="イラストの詳細">
+          <div class="viewer-head">
+            <div class="titles">
+              <p class="v-title" id="viewer-title"></p>
+              <p class="v-meta" id="viewer-meta"></p>
+            </div>
+            <button type="button" class="viewer-close" id="viewer-close" aria-label="詳細を閉じる">閉じる</button>
+          </div>
+          <div class="viewer-stage" id="viewer-stage">
+            <div class="sizer" id="viewer-sizer">
+              <img id="viewer-img" alt="" draggable="false">
+            </div>
+          </div>
+          <div class="viewer-controls">
+            <button type="button" id="viewer-prev" aria-label="前のイラスト">← 前</button>
+            <button type="button" id="viewer-next" aria-label="次のイラスト">次 →</button>
+            <span class="hint" aria-hidden="true">画像をダブルタップ（ダブルクリック）で原寸と全体表示を切り替え</span>
+            <button type="button" id="viewer-zoom-out" aria-label="縮小する">−</button>
+            <span class="zoom-pct" id="viewer-pct" aria-live="polite">100%</span>
+            <button type="button" id="viewer-zoom-in" aria-label="拡大する">＋</button>
+            <button type="button" id="viewer-fit" aria-label="画面に収まる大きさで表示する">全体</button>
+            <button type="button" id="viewer-width" aria-label="横幅が画面に収まる大きさで表示する">横幅</button>
+            <button type="button" id="viewer-actual" aria-label="原寸の大きさで表示する">原寸</button>
+            <button type="button" id="viewer-info-btn" aria-label="詳細情報を表示" aria-expanded="false">詳細</button>
+          </div>
+          <div class="viewer-info" id="viewer-info" hidden>
+            <h2 id="info-title"></h2>
+            <p class="info-meta" id="info-meta"></p>
+            <div class="info-tags" id="info-tags"></div>
+            <p class="info-memo" id="info-memo"></p>
+            <div class="info-actions" id="info-actions"></div>
+          </div>
+        </div>
+    </main>
+    <footer class="site-footer">
+      <div class="check-band" aria-hidden="true"></div>
+      <div class="footer-inner">
+        <div>
+          <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+          <p class="tagline" style="margin-top:8px;font-size:12px;">イラストと設定資料のアーカイブ</p>
+          <p class="footer-note">掲載内容は2026年11月5日時点のものです。</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html" aria-label="フッター：Galleryへ移動">Gallery</a>
+          <a href="character.html" aria-label="フッター：Characterへ移動">Character</a>
+          <a href="comic.html" aria-label="フッター：Comicへ移動">Comic</a>
+          <a href="story.html" aria-label="フッター：Storyへ移動">Story</a>
+          <a href="articles.html" aria-label="フッター：Articlesへ移動">Articles</a>
+          <a href="#top" class="btn btn-outline" aria-label="フッター：トップに戻る" style="padding:8px 16px;">トップに戻る</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+<script src="assets/site.js"></script>
+
+<script>
+// Stage selection shared logic: name band + pressed/dim states.
+function createStage(onSelect, pillLabel) {
+  var area = document.getElementById("stage-area");
+  var band = document.getElementById("stage-nameband");
+  var nameEl = document.getElementById("stage-name");
+  var selected = null;
+  function nameFontSize() {
+    var w = area ? area.clientWidth : 966;
+    return Math.max(9, Math.min(16, Math.round(w * (908 / 2568) * 0.055)));
+  }
+  function render() {
+    var fs = nameFontSize();
+    band.style.minHeight = fs + 4 + "px";
+    document.querySelectorAll(".character-column").forEach(function (col) {
+      var tag = col.getAttribute("data-tag");
+      var btn = col.querySelector(".character-select");
+      var active = selected === tag;
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
+      btn.classList.toggle("dimmed", selected !== null && !active);
+    });
+    if (selected) {
+      var col = document.querySelector('.character-column[data-tag="' + selected + '"]');
+      var grade = col.getAttribute("data-grade");
+      var left = col.getAttribute("data-name-left");
+      var dotColors = { "1": "#2e7d54", "2": "#c74362", "3": "#2f5da8" };
+      var html = "";
+      if (grade) {
+        var d = Math.max(6, Math.round(fs * 0.65));
+        html += '<span class="dot" style="width:' + d + 'px;height:' + d + 'px;background-color:' + dotColors[grade] + '"></span>';
+      }
+      html += '<span class="name" style="font-size:' + fs + 'px"></span>';
+      html += '<span class="pill" style="font-size:' + Math.max(8, fs - 1) + 'px">' + pillLabel + "</span>";
+      nameEl.innerHTML = html;
+      nameEl.querySelector(".name").textContent = selected;
+      nameEl.style.left = left + "%";
+      nameEl.style.fontSize = fs + "px";
+      nameEl.hidden = false;
+    } else {
+      nameEl.hidden = true;
+      nameEl.innerHTML = "";
+    }
+  }
+  document.querySelectorAll("[data-stage-tag]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      onSelect(btn.getAttribute("data-stage-tag"));
+    });
+  });
+  window.addEventListener("resize", render);
+  return {
+    setSelected: function (tag) { selected = tag; render(); },
+    getSelected: function () { return selected; },
+    render: render
+  };
+}
+</script>
+
+<script>
+var ENTRIES = [{"id": 2, "title": "いいおしりの日", "entryDate": "2026-11-04", "dateLabel": "2026年11月4日", "memo": "振り向きポーズ、X投稿用", "tags": ["美桜ちゃん"], "category": "illustration", "img": "images/gallery/2-orig.png", "thumb": "images/gallery/2-thumb.jpg", "xPostUrl": "https://x.com/nao_emon_2525/status/2117929517184594193", "ext": "png"}, {"id": 9, "title": "よ～しよしよしよし(*´ω｀*)", "entryDate": "2026-11-03", "dateLabel": "2026年11月3日", "memo": "", "tags": ["美桜ちゃん", "モモ"], "category": "illustration", "img": "images/gallery/9-orig.png", "thumb": "images/gallery/9-thumb.jpg", "xPostUrl": "", "ext": "png"}, {"id": 8, "title": "文化の日、お出かけデート", "entryDate": "2026-11-03", "dateLabel": "2026年11月3日", "memo": "", "tags": ["美桜ちゃん", "美優ちゃん", "文化の日", "私服"], "category": "illustration", "img": "images/gallery/8-orig.png", "thumb": "images/gallery/8-thumb.jpg", "xPostUrl": "", "ext": "png"}, {"id": 7, "title": "美優ちゃん", "entryDate": "2026-11-03", "dateLabel": "2026年11月3日", "memo": "", "tags": ["美優ちゃん"], "category": "illustration", "img": "images/gallery/7-orig.png", "thumb": "images/gallery/7-thumb.jpg", "xPostUrl": "", "ext": "png"}, {"id": 6, "title": "バストアップ＋全身", "entryDate": "2026-11-03", "dateLabel": "2026年11月3日", "memo": "", "tags": ["美桜ちゃん"], "category": "reference", "img": "images/gallery/6-orig.png", "thumb": "images/gallery/6-thumb.jpg", "xPostUrl": "", "ext": "png"}, {"id": 5, "title": "結合三面図", "entryDate": "2026-11-03", "dateLabel": "2026年11月3日", "memo": "", "tags": ["美桜ちゃん"], "category": "reference", "img": "images/gallery/5-orig.jpg", "thumb": "images/gallery/5-thumb.jpg", "xPostUrl": "", "ext": "jpg"}, {"id": 4, "title": "全身 三面図", "entryDate": "2026-11-03", "dateLabel": "2026年11月3日", "memo": "", "tags": ["美桜ちゃん"], "category": "reference", "img": "images/gallery/4-orig.png", "thumb": "images/gallery/4-thumb.jpg", "xPostUrl": "", "ext": "png"}, {"id": 3, "title": "上半身 三面図", "entryDate": "2026-11-03", "dateLabel": "2026年11月3日", "memo": "", "tags": ["美桜ちゃん"], "category": "reference", "img": "images/gallery/3-orig.png", "thumb": "images/gallery/3-thumb.jpg", "xPostUrl": "", "ext": "png"}, {"id": 1, "title": "美桜 原画", "entryDate": "2026-11-03", "dateLabel": "2026年11月3日", "memo": "全身の原画イラスト", "tags": ["美桜ちゃん"], "category": "illustration", "img": "images/gallery/1-orig.png", "thumb": "images/gallery/1-thumb.jpg", "xPostUrl": "", "ext": "png"}];
+var CATEGORY_LABEL = { illustration: "イラスト", reference: "設定資料" };
+var CHARACTER_TAGS = ["撫子ちゃん", "華恋ちゃん", "ひよりちゃん", "お義兄ちゃん", "美優ちゃん", "美桜ちゃん", "モモ", "茜ちゃん", "詩音ちゃん", "雫ちゃん", "若葉ちゃん"];
+var state = { category: "all", sort: "new", charTag: null, tags: [] };
+var params = new URLSearchParams(location.search);
+var charParam = params.get("char");
+if (charParam && CHARACTER_TAGS.indexOf(charParam) >= 0) state.charTag = charParam;
+
+function hasAnyFilter() {
+  return state.charTag !== null || state.tags.length > 0 || state.category !== "all";
+}
+function visibleEntries() {
+  var list = ENTRIES.filter(function (e) {
+    if (state.category !== "all" && e.category !== state.category) return false;
+    if (state.charTag !== null && e.tags.indexOf(state.charTag) < 0) return false;
+    return state.tags.every(function (t) { return e.tags.indexOf(t) >= 0; });
+  });
+  list.sort(function (a, b) {
+    if (a.entryDate !== b.entryDate) return state.sort === "new" ? (a.entryDate < b.entryDate ? 1 : -1) : (a.entryDate < b.entryDate ? -1 : 1);
+    return state.sort === "new" ? b.id - a.id : a.id - b.id;
+  });
+  return list;
+}
+function otherTagCounts() {
+  var counts = new Map();
+  ENTRIES.forEach(function (e) {
+    e.tags.forEach(function (t) {
+      if (CHARACTER_TAGS.indexOf(t) < 0) counts.set(t, (counts.get(t) || 0) + 1);
+    });
+  });
+  return [...counts.entries()]
+    .sort(function (a, b) { return b[1] - a[1] || a[0].localeCompare(b[0], "ja"); })
+    .map(function ([tag, count]) { return { tag: tag, count: count }; });
+}
+
+var grid = document.getElementById("gallery-grid");
+var countEl = document.getElementById("gallery-count");
+var tagsEl = document.getElementById("gallery-tags");
+var emptyEl = document.getElementById("gallery-empty");
+var noteEl = document.getElementById("char-filter-note");
+var showAllBtn = document.getElementById("stage-showall");
+
+function renderTags() {
+  tagsEl.innerHTML = "";
+  var others = otherTagCounts();
+  if (others.length === 0) {
+    var p = document.createElement("p");
+    p.style.cssText = "margin:0;font-size:12px;color:var(--dim)";
+    p.textContent = "キャラクター以外のタグはまだありません。";
+    tagsEl.appendChild(p);
+    return;
+  }
+  var all = document.createElement("button");
+  all.type = "button";
+  all.className = "chip";
+  var allActive = state.tags.length === 0 && state.charTag === null;
+  all.setAttribute("aria-pressed", allActive ? "true" : "false");
+  all.textContent = "すべてのタグ";
+  all.addEventListener("click", clearAllFilters);
+  tagsEl.appendChild(all);
+  others.forEach(function ({ tag, count }) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "chip";
+    b.setAttribute("aria-pressed", state.tags.indexOf(tag) >= 0 ? "true" : "false");
+    b.setAttribute("aria-label", "タグ「" + tag + "」で絞り込む（" + count + "件）");
+    b.textContent = "#" + tag + " " + count;
+    b.addEventListener("click", function () { toggleFilterTag(tag); });
+    tagsEl.appendChild(b);
+  });
+}
+
+function renderGrid() {
+  var list = visibleEntries();
+  countEl.textContent = hasAnyFilter()
+    ? "全" + ENTRIES.length + "件のうち " + list.length + "件を表示しています"
+    : ENTRIES.length + "件";
+  grid.innerHTML = "";
+  list.forEach(function (e, idx) {
+    var li = document.createElement("li");
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "card";
+    btn.setAttribute("aria-label", e.title + "を拡大表示");
+    btn.innerHTML =
+      '<span class="thumb"><img loading="lazy" alt=""><span class="badge"></span></span>' +
+      '<span class="card-title"></span><span class="card-date"></span>';
+    btn.querySelector("img").src = e.thumb;
+    btn.querySelector("img").alt = e.title;
+    btn.querySelector(".badge").textContent = CATEGORY_LABEL[e.category];
+    btn.querySelector(".card-title").textContent = e.title;
+    btn.querySelector(".card-date").textContent = e.dateLabel;
+    btn.addEventListener("click", function () { openViewer(idx); });
+    li.appendChild(btn);
+    if (e.tags.length > 0) {
+      var tagSpan = document.createElement("span");
+      tagSpan.className = "card-tags";
+      e.tags.forEach(function (t) {
+        var tb = document.createElement("button");
+        tb.type = "button";
+        tb.className = "tag-chip";
+        var pressed = CHARACTER_TAGS.indexOf(t) >= 0 ? state.charTag === t : state.tags.indexOf(t) >= 0;
+        tb.setAttribute("aria-pressed", pressed ? "true" : "false");
+        tb.setAttribute("aria-label", "タグ「" + t + "」で絞り込む");
+        tb.textContent = "#" + t;
+        tb.addEventListener("click", function () { toggleFilterTag(t); });
+        tagSpan.appendChild(tb);
+      });
+      li.appendChild(tagSpan);
+    }
+    if (e.xPostUrl) {
+      var a = document.createElement("a");
+      a.href = e.xPostUrl;
+      a.target = "_blank";
+      a.rel = "noreferrer";
+      a.className = "x-link";
+      a.setAttribute("aria-label", e.title + "のXの投稿を見る");
+      a.textContent = "Xの投稿を見る";
+      li.appendChild(a);
+    }
+    grid.appendChild(li);
+  });
+  emptyEl.hidden = list.length !== 0;
+  if (list.length === 0) {
+    document.getElementById("gallery-empty-title").textContent = state.charTag
+      ? "「" + state.charTag + "」のタグが付いたイラストがありません"
+      : "条件に合うイラストがありません";
+    document.getElementById("gallery-empty-text").textContent = "カテゴリやタグの条件を変えてみてください。";
+  }
+  if (state.charTag) {
+    noteEl.hidden = false;
+    noteEl.innerHTML = "";
+    var strong = document.createElement("span");
+    strong.style.fontWeight = "700";
+    strong.textContent = "「" + state.charTag + "」のイラストを表示中です。";
+    noteEl.appendChild(strong);
+    noteEl.appendChild(document.createTextNode(" "));
+    var back = document.createElement("button");
+    back.type = "button";
+    back.className = "link-back";
+    back.textContent = "すべて表示に戻る";
+    back.addEventListener("click", function () { selectCharacter(state.charTag); });
+    noteEl.appendChild(back);
+  } else {
+    noteEl.hidden = true;
+    noteEl.innerHTML = "";
+  }
+  showAllBtn.classList.toggle("active", hasAnyFilter());
+}
+
+function selectCharacter(tag) {
+  state.charTag = state.charTag === tag ? null : tag;
+  state.tags = state.tags.filter(function (t) { return t !== tag; });
+  stage.setSelected(state.charTag);
+  renderTags();
+  renderGrid();
+}
+function toggleFilterTag(tag) {
+  if (CHARACTER_TAGS.indexOf(tag) >= 0) { selectCharacter(tag); return; }
+  state.tags = state.tags.indexOf(tag) >= 0
+    ? state.tags.filter(function (t) { return t !== tag; })
+    : state.tags.concat([tag]);
+  renderTags();
+  renderGrid();
+}
+function clearAllFilters() {
+  state.charTag = null;
+  state.tags = [];
+  state.category = "all";
+  document.querySelectorAll("[data-category]").forEach(function (b) {
+    b.setAttribute("aria-pressed", b.getAttribute("data-category") === "all" ? "true" : "false");
+  });
+  stage.setSelected(null);
+  renderTags();
+  renderGrid();
+}
+function filterByTag(tag) {
+  if (CHARACTER_TAGS.indexOf(tag) >= 0) {
+    state.charTag = tag;
+    state.tags = state.tags.filter(function (t) { return t !== tag; });
+  } else {
+    state.charTag = null;
+    state.tags = [tag];
+  }
+  stage.setSelected(state.charTag);
+  renderTags();
+  renderGrid();
+  window.scrollTo({ top: 0 });
+}
+
+var stage = createStage(function (tag) { selectCharacter(tag); }, "表示中");
+document.querySelectorAll("[data-category]").forEach(function (b) {
+  b.addEventListener("click", function () {
+    state.category = b.getAttribute("data-category");
+    document.querySelectorAll("[data-category]").forEach(function (x) {
+      x.setAttribute("aria-pressed", x === b ? "true" : "false");
+    });
+    renderGrid();
+  });
+});
+document.getElementById("gallery-sort").addEventListener("change", function (e) {
+  state.sort = e.target.value;
+  renderGrid();
+});
+showAllBtn.addEventListener("click", clearAllFilters);
+document.getElementById("gallery-reset").addEventListener("click", clearAllFilters);
+stage.setSelected(state.charTag);
+renderTags();
+renderGrid();
+
+/* ---------- fullscreen viewer ---------- */
+var viewer = document.getElementById("viewer");
+var vStage = document.getElementById("viewer-stage");
+var vSizer = document.getElementById("viewer-sizer");
+var vImg = document.getElementById("viewer-img");
+var vIndex = -1;
+var vNatural = null;
+var vMode = "fit"; // "fit" | "width" | number (scale vs natural size)
+var vInfoOpen = false;
+
+function fitScale() {
+  if (!vNatural) return 1;
+  return Math.min(vStage.clientWidth / vNatural.width, vStage.clientHeight / vNatural.height, 1);
+}
+function widthScale() {
+  if (!vNatural) return 1;
+  return Math.min(vStage.clientWidth / vNatural.width, 1);
+}
+function effectiveZoom() {
+  if (vMode === "fit") return fitScale();
+  if (vMode === "width") return widthScale();
+  return vMode;
+}
+function layoutViewer() {
+  if (!vNatural) return;
+  var eff = effectiveZoom();
+  var dw = Math.round(vNatural.width * eff);
+  var dh = Math.round(vNatural.height * eff);
+  var ww = Math.max(vStage.clientWidth, dw);
+  var wh = Math.max(vStage.clientHeight, dh);
+  vSizer.style.width = ww + "px";
+  vSizer.style.height = wh + "px";
+  vImg.style.left = ((ww - dw) / 2) + "px";
+  vImg.style.top = ((wh - dh) / 2) + "px";
+  vImg.style.width = dw + "px";
+  vImg.style.height = dh + "px";
+  document.getElementById("viewer-pct").textContent = Math.round(eff * 100) + "%";
+  document.getElementById("viewer-zoom-out").disabled = eff <= 0.1;
+  document.getElementById("viewer-zoom-in").disabled = eff >= 3;
+  var fitBtn = document.getElementById("viewer-fit");
+  var widthBtn = document.getElementById("viewer-width");
+  var actBtn = document.getElementById("viewer-actual");
+  fitBtn.classList.toggle("active", vMode === "fit");
+  fitBtn.disabled = vMode === "fit";
+  widthBtn.classList.toggle("active", vMode === "width");
+  widthBtn.disabled = vMode === "width";
+  var isActual = typeof vMode === "number" && Math.abs(eff - 1) < 0.001;
+  actBtn.classList.toggle("active", isActual);
+  actBtn.disabled = isActual;
+}
+function currentList() { return visibleEntries(); }
+function showViewerEntry() {
+  var list = currentList();
+  var e = list[vIndex];
+  if (!e) return;
+  document.getElementById("viewer-title").textContent = e.title;
+  document.getElementById("viewer-meta").textContent =
+    e.dateLabel + " ・ " + CATEGORY_LABEL[e.category] + " ・ " + (vIndex + 1) + " / " + list.length;
+  document.getElementById("viewer-prev").disabled = vIndex <= 0;
+  document.getElementById("viewer-next").disabled = vIndex >= list.length - 1;
+  vNatural = null;
+  vMode = "fit";
+  vImg.src = e.img;
+  vImg.alt = e.title;
+  // info panel
+  document.getElementById("info-title").textContent = e.title;
+  document.getElementById("info-meta").textContent = e.dateLabel + " ・ " + CATEGORY_LABEL[e.category];
+  var tagsBox = document.getElementById("info-tags");
+  tagsBox.innerHTML = "";
+  if (e.tags.length > 0) {
+    e.tags.forEach(function (t) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = "#" + t;
+      b.setAttribute("aria-label", "タグ「" + t + "」で絞り込む");
+      b.addEventListener("click", function () { closeViewer(); filterByTag(t); });
+      tagsBox.appendChild(b);
+    });
+  } else {
+    var p = document.createElement("p");
+    p.style.cssText = "margin:0;font-size:14px;color:var(--dim)";
+    p.textContent = "タグは付いていません。";
+    tagsBox.appendChild(p);
+  }
+  var memo = document.getElementById("info-memo");
+  memo.textContent = e.memo || "";
+  memo.style.display = e.memo ? "" : "none";
+  var actions = document.getElementById("info-actions");
+  actions.innerHTML = "";
+  var dl = document.createElement("a");
+  dl.href = e.img;
+  dl.download = e.title + "." + e.ext;
+  dl.className = "btn btn-outline";
+  dl.textContent = "画像を保存";
+  actions.appendChild(dl);
+  if (e.xPostUrl) {
+    var xa = document.createElement("a");
+    xa.href = e.xPostUrl;
+    xa.target = "_blank";
+    xa.rel = "noreferrer";
+    xa.className = "btn btn-outline-navy";
+    xa.setAttribute("aria-label", e.title + "のXの投稿を新しいタブで見る");
+    xa.textContent = "Xの投稿を見る";
+    actions.appendChild(xa);
+  }
+  vStage.scrollTop = 0;
+  vStage.scrollLeft = 0;
+}
+function openViewer(idx) {
+  vIndex = idx;
+  vInfoOpen = false;
+  document.getElementById("viewer-info").hidden = true;
+  document.getElementById("viewer-info-btn").setAttribute("aria-expanded", "false");
+  viewer.hidden = false;
+  document.body.style.overflow = "hidden";
+  showViewerEntry();
+}
+function closeViewer() {
+  viewer.hidden = true;
+  document.body.style.overflow = "";
+  vImg.removeAttribute("src");
+}
+function goViewer(delta) {
+  var list = currentList();
+  var next = vIndex + delta;
+  if (next < 0 || next >= list.length) return;
+  vIndex = next;
+  showViewerEntry();
+}
+vImg.addEventListener("load", function () {
+  if (vImg.naturalWidth > 0) {
+    vNatural = { width: vImg.naturalWidth, height: vImg.naturalHeight };
+    layoutViewer();
+  }
+});
+vImg.addEventListener("dblclick", function () {
+  if (!vNatural) return;
+  vMode = (typeof vMode === "number" && Math.abs(vMode - 1) < 0.001) ? "fit" : 1;
+  layoutViewer();
+});
+document.getElementById("viewer-close").addEventListener("click", closeViewer);
+document.getElementById("viewer-prev").addEventListener("click", function () { goViewer(-1); });
+document.getElementById("viewer-next").addEventListener("click", function () { goViewer(1); });
+document.getElementById("viewer-zoom-in").addEventListener("click", function () {
+  vMode = Math.min(3, effectiveZoom() * 1.25);
+  layoutViewer();
+});
+document.getElementById("viewer-zoom-out").addEventListener("click", function () {
+  vMode = Math.max(0.1, effectiveZoom() / 1.25);
+  layoutViewer();
+});
+document.getElementById("viewer-fit").addEventListener("click", function () { vMode = "fit"; layoutViewer(); });
+document.getElementById("viewer-width").addEventListener("click", function () { vMode = "width"; layoutViewer(); });
+document.getElementById("viewer-actual").addEventListener("click", function () { vMode = 1; layoutViewer(); });
+document.getElementById("viewer-info-btn").addEventListener("click", function () {
+  vInfoOpen = !vInfoOpen;
+  document.getElementById("viewer-info").hidden = !vInfoOpen;
+  this.setAttribute("aria-expanded", vInfoOpen ? "true" : "false");
+  this.setAttribute("aria-label", vInfoOpen ? "詳細情報を隠す" : "詳細情報を表示");
+  this.classList.toggle("active", vInfoOpen);
+  layoutViewer();
+});
+window.addEventListener("resize", function () { if (!viewer.hidden) layoutViewer(); });
+document.addEventListener("keydown", function (e) {
+  if (viewer.hidden) return;
+  if (e.key === "Escape") closeViewer();
+  if (e.key === "ArrowLeft") goViewer(-1);
+  if (e.key === "ArrowRight") goViewer(1);
+});
+</script>
+
 </body>
 </html>

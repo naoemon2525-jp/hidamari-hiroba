@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comic | 美桜ちゃんのひだまり広場</title>
+<link rel="icon" href="images/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body id="top">
+<div class="shell">
+  <div class="topbar">
+    <a href="index.html" aria-label="美桜ちゃんのひだまり広場 トップ（Gallery）へ移動">
+      <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+    </a>
+    <button type="button" class="btn btn-outline" data-menu-open aria-label="メニューを開く" aria-expanded="false" style="padding:6px 16px;">メニュー</button>
+  </div>
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-head">
+        <h1 class="sr-only">美桜ちゃんのひだまり広場</h1>
+        <a href="index.html" aria-label="美桜ちゃんのひだまり広場 トップ（Gallery）へ移動">
+          <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+        </a>
+        <p class="tagline">イラストと設定資料のアーカイブ</p>
+        <p class="count-chips">
+          <span>イラスト 9件</span>
+          <span>漫画 1件</span>
+          <span>記事 0件</span>
+          <span>小説 1作品</span>
+          <span>あいうえお 絵 29/46</span>
+        </p>
+      </div>
+      <nav class="side-nav" aria-label="サイトメニュー">
+          <a href="index.html" aria-label="メニュー：Gallery、キャラクターとイラストを表示">Gallery</a>
+          <a href="character.html" aria-label="メニュー：Character、キャラクターのプロフィールを表示">Character</a>
+          <a href="comic.html" aria-label="メニュー：Comic、漫画を表示" aria-current="page">Comic</a>
+          <a href="story.html" aria-label="メニュー：Story、小説を表示">Story</a>
+          <a href="aiueo.html" aria-label="メニュー：Aiueo、あいうえおを表示">Aiueo</a>
+          <a href="articles.html" aria-label="メニュー：Articles、記事を表示">Articles</a>
+      </nav>
+      <div class="sidebar-foot"><div class="check-band" aria-hidden="true"></div></div>
+    </div>
+  </aside>
+  <div class="mobile-menu" id="mobile-menu" hidden role="dialog" aria-modal="true" aria-label="サイトメニュー">
+    <button type="button" class="backdrop" data-menu-close aria-label="メニューを閉じる"></button>
+    <div class="panel">
+      <div class="close-row">
+        <button type="button" class="btn btn-outline" data-menu-close aria-label="メニューを閉じる" style="padding:6px 16px;">閉じる</button>
+      </div>
+    <div class="sidebar-inner">
+      <div class="sidebar-head">
+        <h1 class="sr-only">美桜ちゃんのひだまり広場</h1>
+        <a href="index.html" aria-label="美桜ちゃんのひだまり広場 トップ（Gallery）へ移動">
+          <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+        </a>
+        <p class="tagline">イラストと設定資料のアーカイブ</p>
+        <p class="count-chips">
+          <span>イラスト 9件</span>
+          <span>漫画 1件</span>
+          <span>記事 0件</span>
+          <span>小説 1作品</span>
+          <span>あいうえお 絵 29/46</span>
+        </p>
+      </div>
+      <nav class="side-nav" aria-label="サイトメニュー">
+          <a href="index.html" aria-label="メニュー：Gallery、キャラクターとイラストを表示">Gallery</a>
+          <a href="character.html" aria-label="メニュー：Character、キャラクターのプロフィールを表示">Character</a>
+          <a href="comic.html" aria-label="メニュー：Comic、漫画を表示" aria-current="page">Comic</a>
+          <a href="story.html" aria-label="メニュー：Story、小説を表示">Story</a>
+          <a href="aiueo.html" aria-label="メニュー：Aiueo、あいうえおを表示">Aiueo</a>
+          <a href="articles.html" aria-label="メニュー：Articles、記事を表示">Articles</a>
+      </nav>
+      <div class="sidebar-foot"><div class="check-band" aria-hidden="true"></div></div>
+    </div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <main>
+<section aria-label="Comic">
+          <div>
+            <h2 class="section-title">Comic<span class="sub">漫画</span></h2>
+            <p class="lead">1作品ずつページ画像を順番に登録して、縦にスクロールして読めます。</p>
+            <p class="count-line" id="comic-count">1件</p>
+          </div>
+          <div class="filter-row">
+                  <label style="display:flex;align-items:center;gap:8px;font-size:14px;">
+                    <span style="color:var(--dim);">並べ替え</span>
+                    <select id="comic-sort" class="sort-select" aria-label="漫画の日付の並べ替え">
+                      <option value="new">日付が新しい順</option>
+                      <option value="old">日付が古い順</option>
+                    </select>
+                  </label>
+                </div>
+          <div class="tag-row" aria-label="漫画をタグで絞り込み">
+                  <button type="button" class="chip" data-tag-chip="" aria-pressed="true">すべてのタグ</button>
+                  <button type="button" class="chip" data-tag-chip="美優ちゃん" aria-pressed="false" aria-label="タグ「美優ちゃん」の漫画だけを表示（1件）">#美優ちゃん 1</button><button type="button" class="chip" data-tag-chip="美桜ちゃん" aria-pressed="false" aria-label="タグ「美桜ちゃん」の漫画だけを表示（1件）">#美桜ちゃん 1</button>
+                </div>
+          <ul class="card-grid" id="comic-list">
+<li data-date="2026-11-04" data-id="1" data-tags="[&quot;美桜ちゃん&quot;, &quot;美優ちゃん&quot;]">
+            <a class="card" href="comic-1.html" aria-label="ヴェルタースオリジナルを読む">
+              <span class="thumb"><img src="images/comic/1-p1-thumb.jpg" alt="ヴェルタースオリジナル" loading="lazy"><span class="badge">全5ページ</span></span>
+              <span class="card-title">ヴェルタースオリジナル</span>
+              <span class="card-date">2026年11月4日</span>
+            </a>
+            <span class="card-tags"><button type="button" class="tag-chip" data-tag-filter="美桜ちゃん" aria-pressed="false" aria-label="タグ「美桜ちゃん」で絞り込む">#美桜ちゃん</button><button type="button" class="tag-chip" data-tag-filter="美優ちゃん" aria-pressed="false" aria-label="タグ「美優ちゃん」で絞り込む">#美優ちゃん</button></span>
+          </li>
+          </ul>
+        </section>
+    </main>
+    <footer class="site-footer">
+      <div class="check-band" aria-hidden="true"></div>
+      <div class="footer-inner">
+        <div>
+          <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+          <p class="tagline" style="margin-top:8px;font-size:12px;">イラストと設定資料のアーカイブ</p>
+          <p class="footer-note">掲載内容は2026年11月5日時点のものです。</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html" aria-label="フッター：Galleryへ移動">Gallery</a>
+          <a href="character.html" aria-label="フッター：Characterへ移動">Character</a>
+          <a href="comic.html" aria-label="フッター：Comicへ移動">Comic</a>
+          <a href="story.html" aria-label="フッター：Storyへ移動">Story</a>
+          <a href="articles.html" aria-label="フッター：Articlesへ移動">Articles</a>
+          <a href="#top" class="btn btn-outline" aria-label="フッター：トップに戻る" style="padding:8px 16px;">トップに戻る</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+<script src="assets/site.js"></script>
+
+<script>
+// List filtering/sorting shared by Comic and Story list pages.
+(function () {
+  var listEl = document.getElementById("comic-list");
+  if (!listEl) return;
+  var selected = [];
+  var countEl = document.getElementById("comic-count");
+  var total = listEl.children.length;
+  var unit = "件";
+  var sortSel = document.getElementById("comic-sort");
+  function apply() {
+    var items = [...listEl.children];
+    items.forEach(function (li) {
+      var tags = JSON.parse(li.getAttribute("data-tags") || "[]");
+      li.style.display = selected.every(function (t) { return tags.indexOf(t) >= 0; }) ? "" : "none";
+    });
+    var visible = items.filter(function (li) { return li.style.display !== "none"; }).length;
+    if (countEl) {
+      countEl.textContent = selected.length > 0
+        ? "全" + total + unit + "のうち " + visible + unit + "を表示しています"
+        : total + unit;
+    }
+    document.querySelectorAll("[data-tag-chip]").forEach(function (chip) {
+      var t = chip.getAttribute("data-tag-chip");
+      chip.setAttribute("aria-pressed", t === "" ? (selected.length === 0 ? "true" : "false") : (selected.indexOf(t) >= 0 ? "true" : "false"));
+    });
+  }
+  document.querySelectorAll("[data-tag-chip]").forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      var t = chip.getAttribute("data-tag-chip");
+      if (t === "") selected = [];
+      else if (selected.indexOf(t) >= 0) selected = selected.filter(function (x) { return x !== t; });
+      else selected = selected.concat([t]);
+      apply();
+    });
+  });
+  document.querySelectorAll("[data-tag-filter]").forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      var t = chip.getAttribute("data-tag-filter");
+      if (selected.indexOf(t) < 0) selected = selected.concat([t]);
+      apply();
+    });
+  });
+  if (sortSel) {
+    sortSel.addEventListener("change", function () {
+      var dir = sortSel.value === "new" ? -1 : 1;
+      var items = [...listEl.children];
+      items.sort(function (a, b) {
+        var da = a.getAttribute("data-date"), db = b.getAttribute("data-date");
+        if (da !== db) return (da < db ? -1 : 1) * dir;
+        return (Number(a.getAttribute("data-id")) - Number(b.getAttribute("data-id"))) * dir;
+      });
+      items.forEach(function (li) { listEl.appendChild(li); });
+    });
+  }
+  apply();
+})();
+</script>
+
+</body>
+</html>

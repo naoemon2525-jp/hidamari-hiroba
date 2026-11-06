@@ -680,7 +680,7 @@ h3.block-title {
   border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 8px 16px; font-size: 14px; font-weight: 700; color: #fff; cursor: pointer;
 }
-.viewer-stage { min-height: 0; flex: 1; overflow: auto; overscroll-behavior: contain; position: relative; }
+.viewer-stage { min-height: 0; flex: 1; overflow: auto; overscroll-behavior: contain; position: relative; scrollbar-gutter: stable; }
 .viewer-stage .sizer { position: relative; margin: 0 auto; }
 .viewer-stage img {
   position: absolute;
@@ -689,9 +689,13 @@ h3.block-title {
   max-height: none;
   cursor: pointer;
 }
-/* Caption bar: always visible under the image area so the description can be
-   read without opening the info panel. Only the image area scrolls, so the
-   bar stays at the bottom in width mode too. */
+/* Caption bar: shown only in "fit" mode so the description can be read
+   without opening the info panel. In enlarged modes (width / actual size /
+   numeric zoom) it is hidden and only the image is shown. The bar toggling
+   changes the stage height, but the width-mode scale depends on width only
+   and the stage width is stabilised by scrollbar-gutter, so no
+   recalculation loop occurs. */
+.viewer-caption[hidden] { display: none; }
 .viewer-caption {
   flex-shrink: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.15);

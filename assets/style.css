@@ -126,15 +126,51 @@ main {
 }
 .side-nav { display: flex; flex-direction: column; gap: 4px; padding: 0 12px 16px; }
 .side-nav a {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 10px;
+  row-gap: 2px;
   border-radius: var(--radius);
-  padding: 12px 16px;
-  font-size: 16px;
-  font-weight: 700;
+  padding: 10px 16px;
   text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 .side-nav a:hover { background: var(--chrome-hover); }
-.side-nav a[aria-current="page"] { background: var(--surface); color: var(--navy); }
+.side-nav a[aria-current="page"] { background: var(--surface); color: var(--navy); box-shadow: 0 1px 0 rgba(99, 48, 67, 0.08); }
+
+/* サイドバーメニュー：アニメ・ゲーム公式HP風（A：ポップで元気な公式風）
+   本体と同じく、英語ラベルは Fredoka、日本語サブは Zen Maru Gothic。
+   PCサイドバーとスマホ用メニューで同じ .side-nav を使うため両方に効く。 */
+.menu-label-en {
+  font-family: "Fredoka", "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.045em;
+  line-height: 1.1;
+}
+.menu-label-ja {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  color: var(--dim);
+  transition: color 0.15s ease;
+}
+.side-nav a[aria-current="page"] .menu-label-ja { color: var(--accent); }
+@media (hover: hover) {
+  .side-nav a:hover .menu-label-en { color: var(--accent); }
+  .side-nav a:hover .menu-label-ja { color: var(--accent); }
+  .side-nav a[aria-current="page"]:hover .menu-label-en { color: inherit; }
+}
+/* スマホの開く／閉じるボタンも本体と同じく Zen Maru Gothic にそろえる */
+.topbar button[data-menu-open],
+.mobile-menu .close-row button[data-menu-close] {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
 .sidebar-foot { margin-top: auto; padding-top: 24px; }
 
 .mobile-menu {

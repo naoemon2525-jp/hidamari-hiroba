@@ -85,94 +85,45 @@
   <div class="content-wrap">
     <main>
 <h2 class="section-title">Gallery<span class="sub">イラスト・設定資料</span></h2>
-        <section aria-label="キャラクターから探す" style="margin-top:16px;">
-          <h3 class="block-title">キャラクターから探す</h3>
-          <p class="lead-xs">キャラをタップすると、そのキャラのタグが付いたイラストだけが表示されます。もう一度タップすると、すべて表示に戻ります。タグが付いていないイラストは「すべて」のときだけ表示されます。全員が横一列に並んでいます。</p>
-          <div class="stage-frame">
-      <div class="stage-head">
-        <button type="button" class="stage-showall" id="stage-showall">全て表示</button>
-        <p class="grade-legend">
-          <span class="item"><span class="dot" style="background-color:#2e7d54"></span>1年生</span>
-          <span class="item"><span class="dot" style="background-color:#c74362"></span>2年生</span>
-          <span class="item"><span class="dot" style="background-color:#2f5da8"></span>3年生</span>
-        </p>
-      </div>
-      <div class="stage-body">
-        <div class="stage-area" id="stage-area" style="aspect-ratio: 2568 / 1045">
-          <div class="character-column" data-depth="6" data-tag="撫子ちゃん" data-grade="1" data-name-left="10.00" style="left:-5.101%;top:13.110%;width:23.598%;height:86.890%">
-            <button type="button" class="character-select" data-stage-tag="撫子ちゃん" aria-pressed="false" aria-label="撫子ちゃんのイラストだけを表示">
-              <img src="images/characters/nadeshiko.png" alt="撫子ちゃんの全身イラスト">
-            </button>
+        <section aria-label="キャラクターから探す" class="face-section">
+          <div class="face-head">
+            <h3 class="block-title">キャラクターから探す</h3>
+            <p class="lead-xs">タップでそのキャラだけ表示。もう一度タップで全表示に戻ります</p>
           </div>
-          <div class="character-column" data-depth="5" data-tag="華恋ちゃん" data-grade="1" data-name-left="17.99" style="left:10.047%;top:13.110%;width:15.888%;height:86.890%">
-            <button type="button" class="character-select" data-stage-tag="華恋ちゃん" aria-pressed="false" aria-label="華恋ちゃんのイラストだけを表示">
-              <img src="images/characters/karen.webp" alt="華恋ちゃんの全身イラスト">
-            </button>
+          <div class="face-frame">
+            <div class="face-row" id="face-row">
+              <button type="button" class="face-icon" data-face-tag="美桜ちゃん" aria-pressed="false" aria-label="美桜ちゃんのイラストだけを表示"><img src="images/faces/mio.webp" alt="美桜ちゃんの顔アイコン"></button>
+              <button type="button" class="face-icon" data-face-tag="美優ちゃん" aria-pressed="false" aria-label="美優ちゃんのイラストだけを表示"><img src="images/faces/miyu.webp" alt="美優ちゃんの顔アイコン"></button>
+              <button type="button" class="face-icon" data-face-tag="お義兄ちゃん" aria-pressed="false" aria-label="お義兄ちゃんのイラストだけを表示"><img src="images/faces/onii.webp" alt="お義兄ちゃんの顔アイコン"></button>
+              <button type="button" class="face-icon" data-face-tag="モモ" aria-pressed="false" aria-label="モモのイラストだけを表示"><img src="images/faces/momo.webp" alt="柴犬のモモの顔アイコン"></button>
+              <button type="button" class="face-icon" data-face-tag="茜ちゃん" aria-pressed="false" aria-label="茜ちゃんのイラストだけを表示"><img src="images/faces/akane.webp" alt="茜ちゃんの顔アイコン"></button>
+              <button type="button" class="face-icon" data-face-tag="ひよりちゃん" aria-pressed="false" aria-label="ひよりちゃんのイラストだけを表示"><img src="images/faces/hiyori.webp" alt="ひよりちゃんの顔アイコン"></button>
+              <button type="button" class="face-icon" data-face-tag="華恋ちゃん" aria-pressed="false" aria-label="華恋ちゃんのイラストだけを表示"><img src="images/faces/karen.webp" alt="華恋ちゃんの顔アイコン"></button>
+              <button type="button" class="face-icon" data-face-tag="撫子ちゃん" aria-pressed="false" aria-label="撫子ちゃんのイラストだけを表示"><img src="images/faces/nadeshiko.webp" alt="撫子ちゃんの顔アイコン"></button>
+              <button type="button" class="face-icon" data-face-tag="詩音ちゃん" aria-pressed="false" aria-label="詩音ちゃんのイラストだけを表示"><img src="images/faces/shion.webp" alt="詩音ちゃんの顔アイコン"></button>
+              <button type="button" class="face-icon" data-face-tag="雫ちゃん" aria-pressed="false" aria-label="雫ちゃんのイラストだけを表示"><img src="images/faces/shizuku.webp" alt="雫ちゃんの顔アイコン"></button>
+              <button type="button" class="face-icon" data-face-tag="若葉ちゃん" aria-pressed="false" aria-label="若葉ちゃんのイラストだけを表示"><img src="images/faces/wakaba.webp" alt="若葉ちゃんの顔アイコン"></button>
+              <span class="face-tail">
+                <button type="button" class="stage-showall" id="stage-showall">全て表示</button>
+                <span class="face-selected" id="face-selected" hidden></span>
+              </span>
+            </div>
+            <div class="check-band" aria-hidden="true"></div>
           </div>
-          <div class="character-column" data-depth="4" data-tag="ひよりちゃん" data-grade="1" data-name-left="28.21" style="left:23.014%;top:15.311%;width:10.397%;height:84.211%">
-            <button type="button" class="character-select" data-stage-tag="ひよりちゃん" aria-pressed="false" aria-label="ひよりちゃんのイラストだけを表示">
-              <img src="images/characters/hiyori.png" alt="ひよりちゃんの全身イラスト">
-            </button>
-          </div>
-          <div class="character-column" data-depth="7" data-tag="お義兄ちゃん" data-grade="2" data-name-left="34.50" style="left:21.336%;top:3.809%;width:25.989%;height:95.885%">
-            <button type="button" class="character-select" data-stage-tag="お義兄ちゃん" aria-pressed="false" aria-label="お義兄ちゃんのイラストだけを表示">
-              <img src="images/characters/onii.png" alt="お義兄ちゃんの全身イラスト">
-            </button>
-          </div>
-          <div class="character-column" data-depth="2" data-tag="美優ちゃん" data-grade="2" data-name-left="42.13" style="left:29.984%;top:13.110%;width:23.598%;height:86.890%">
-            <button type="button" class="character-select" data-stage-tag="美優ちゃん" aria-pressed="false" aria-label="美優ちゃんのイラストだけを表示">
-              <img src="images/characters/miyu.png" alt="美優ちゃんの全身イラスト">
-            </button>
-          </div>
-          <div class="character-column" data-depth="1" data-tag="美桜ちゃん" data-grade="2" data-name-left="53.41" style="left:41.277%;top:13.110%;width:23.598%;height:86.890%">
-            <button type="button" class="character-select" data-stage-tag="美桜ちゃん" aria-pressed="false" aria-label="美桜ちゃんのイラストだけを表示">
-              <img src="images/characters/mio.png" alt="美桜ちゃんの全身イラスト">
-            </button>
-          </div>
-          <div class="character-column" data-depth="0" data-tag="モモ" data-grade="" data-name-left="58.76" style="left:55.179%;top:68.708%;width:7.165%;height:31.292%">
-            <button type="button" class="character-select" data-stage-tag="モモ" aria-pressed="false" aria-label="モモのイラストだけを表示">
-              <img src="images/characters/momo.webp" alt="柴犬のモモのイラスト">
-            </button>
-          </div>
-          <div class="character-column" data-depth="3" data-tag="茜ちゃん" data-grade="2" data-name-left="64.33" style="left:53.205%;top:10.335%;width:23.731%;height:89.751%">
-            <button type="button" class="character-select" data-stage-tag="茜ちゃん" aria-pressed="false" aria-label="茜ちゃんのイラストだけを表示">
-              <img src="images/characters/akane.png" alt="茜ちゃんの全身イラスト">
-            </button>
-          </div>
-          <div class="character-column" data-depth="4" data-tag="詩音ちゃん" data-grade="3" data-name-left="75.08" style="left:62.971%;top:12.105%;width:23.925%;height:88.182%">
-            <button type="button" class="character-select" data-stage-tag="詩音ちゃん" aria-pressed="false" aria-label="詩音ちゃんのイラストだけを表示">
-              <img src="images/characters/shion.png" alt="詩音ちゃんの全身イラスト">
-            </button>
-          </div>
-          <div class="character-column" data-depth="5" data-tag="雫ちゃん" data-grade="3" data-name-left="85.53" style="left:74.291%;top:13.569%;width:23.427%;height:86.354%">
-            <button type="button" class="character-select" data-stage-tag="雫ちゃん" aria-pressed="false" aria-label="雫ちゃんのイラストだけを表示">
-              <img src="images/characters/shizuku.png" alt="雫ちゃんの全身イラスト">
-            </button>
-          </div>
-          <div class="character-column" data-depth="6" data-tag="若葉ちゃん" data-grade="3" data-name-left="90.00" style="left:84.241%;top:13.273%;width:23.509%;height:86.660%">
-            <button type="button" class="character-select" data-stage-tag="若葉ちゃん" aria-pressed="false" aria-label="若葉ちゃんのイラストだけを表示">
-              <img src="images/characters/wakaba.png" alt="若葉ちゃんの全身イラスト">
-            </button>
-          </div>
-        </div>
-        <div class="stage-nameband" id="stage-nameband">
-          <span class="stage-name" id="stage-name" hidden></span>
-        </div>
-      </div>
-      <div class="check-band" aria-hidden="true"></div>
-    </div>
-          <p id="char-filter-note" style="margin-top:12px;font-size:14px;" hidden></p>
         </section>
 
-        <div style="margin-top:32px;">
-          <h3 class="block-title">イラスト一覧</h3>
-          <p class="count-line" id="gallery-count"></p>
+        <div style="margin-top:20px;">
+          <div class="list-head">
+            <h3 class="block-title">イラスト一覧</h3>
+            <p class="count-line" id="gallery-count"></p>
+          </div>
           <div class="filter-row">
             <div class="segmented" role="group" aria-label="カテゴリで絞り込み">
               <button type="button" data-category="all" aria-pressed="true">すべて</button>
               <button type="button" data-category="illustration" aria-pressed="false">イラスト</button>
               <button type="button" data-category="reference" aria-pressed="false">設定資料</button>
             </div>
+            <div class="tag-row" id="gallery-tags" aria-label="タグで絞り込み"></div>
             <label class="spacer">
               <span class="dim">並べ替え</span>
               <select id="gallery-sort" class="sort-select" aria-label="日付の並べ替え">
@@ -181,7 +132,6 @@
               </select>
             </label>
           </div>
-          <div class="tag-row" id="gallery-tags" aria-label="タグで絞り込み"></div>
           <div id="gallery-empty" class="empty-state" hidden>
             <p class="empty-title" id="gallery-empty-title"></p>
             <p id="gallery-empty-text"></p>
@@ -238,7 +188,7 @@
         <div>
           <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
           <p class="tagline" style="margin-top:8px;font-size:12px;">イラストと設定資料のアーカイブ</p>
-          <p class="footer-note">掲載内容は2026年11月6日時点のものです。</p>
+          <p class="footer-note">掲載内容は2026年11月7日時点のものです。</p>
           <p class="footer-note">X: <a href="https://x.com/nao_emon_2525" target="_blank" rel="noopener noreferrer">@nao_emon_2525</a></p>
         </div>
         <div class="footer-links">
@@ -256,54 +206,42 @@
 <script src="assets/site.js"></script>
 
 <script>
-// Stage selection shared logic: name band + pressed/dim states.
-function createStage(onSelect, pillLabel) {
-  var area = document.getElementById("stage-area");
-  var band = document.getElementById("stage-nameband");
-  var nameEl = document.getElementById("stage-name");
+// Face-icon character selector: pressed/dim states plus the selected
+// character's name, shown next to the "全て表示" button at the row's right end.
+function createFaceSelect(onSelect) {
+  var nameEl = document.getElementById("face-selected");
   var selected = null;
-  function nameFontSize() {
-    var w = area ? area.clientWidth : 966;
-    return Math.max(9, Math.min(16, Math.round(w * (908 / 2568) * 0.055)));
-  }
+  var GRADE_DOT = {
+    "ひよりちゃん": "#2e7d54", "華恋ちゃん": "#2e7d54", "撫子ちゃん": "#2e7d54",
+    "美桜ちゃん": "#c74362", "美優ちゃん": "#c74362", "茜ちゃん": "#c74362", "お義兄ちゃん": "#c74362",
+    "詩音ちゃん": "#2f5da8", "雫ちゃん": "#2f5da8", "若葉ちゃん": "#2f5da8"
+  };
   function render() {
-    var fs = nameFontSize();
-    band.style.minHeight = fs + 4 + "px";
-    document.querySelectorAll(".character-column").forEach(function (col) {
-      var tag = col.getAttribute("data-tag");
-      var btn = col.querySelector(".character-select");
+    document.querySelectorAll("[data-face-tag]").forEach(function (btn) {
+      var tag = btn.getAttribute("data-face-tag");
       var active = selected === tag;
       btn.setAttribute("aria-pressed", active ? "true" : "false");
       btn.classList.toggle("dimmed", selected !== null && !active);
     });
     if (selected) {
-      var col = document.querySelector('.character-column[data-tag="' + selected + '"]');
-      var grade = col.getAttribute("data-grade");
-      var left = col.getAttribute("data-name-left");
-      var dotColors = { "1": "#2e7d54", "2": "#c74362", "3": "#2f5da8" };
       var html = "";
-      if (grade) {
-        var d = Math.max(6, Math.round(fs * 0.65));
-        html += '<span class="dot" style="width:' + d + 'px;height:' + d + 'px;background-color:' + dotColors[grade] + '"></span>';
+      if (GRADE_DOT[selected]) {
+        html += '<span class="dot" style="background-color:' + GRADE_DOT[selected] + '"></span>';
       }
-      html += '<span class="name" style="font-size:' + fs + 'px"></span>';
-      html += '<span class="pill" style="font-size:' + Math.max(8, fs - 1) + 'px">' + pillLabel + "</span>";
+      html += '<span class="name"></span><span class="pill">表示中</span>';
       nameEl.innerHTML = html;
       nameEl.querySelector(".name").textContent = selected;
-      nameEl.style.left = left + "%";
-      nameEl.style.fontSize = fs + "px";
       nameEl.hidden = false;
     } else {
       nameEl.hidden = true;
       nameEl.innerHTML = "";
     }
   }
-  document.querySelectorAll("[data-stage-tag]").forEach(function (btn) {
+  document.querySelectorAll("[data-face-tag]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      onSelect(btn.getAttribute("data-stage-tag"));
+      onSelect(btn.getAttribute("data-face-tag"));
     });
   });
-  window.addEventListener("resize", render);
   return {
     setSelected: function (tag) { selected = tag; render(); },
     getSelected: function () { return selected; },
@@ -352,7 +290,6 @@ var grid = document.getElementById("gallery-grid");
 var countEl = document.getElementById("gallery-count");
 var tagsEl = document.getElementById("gallery-tags");
 var emptyEl = document.getElementById("gallery-empty");
-var noteEl = document.getElementById("char-filter-note");
 var showAllBtn = document.getElementById("stage-showall");
 
 function renderTags() {
@@ -442,31 +379,13 @@ function renderGrid() {
       : "条件に合うイラストがありません";
     document.getElementById("gallery-empty-text").textContent = "カテゴリやタグの条件を変えてみてください。";
   }
-  if (state.charTag) {
-    noteEl.hidden = false;
-    noteEl.innerHTML = "";
-    var strong = document.createElement("span");
-    strong.style.fontWeight = "700";
-    strong.textContent = "「" + state.charTag + "」のイラストを表示中です。";
-    noteEl.appendChild(strong);
-    noteEl.appendChild(document.createTextNode(" "));
-    var back = document.createElement("button");
-    back.type = "button";
-    back.className = "link-back";
-    back.textContent = "すべて表示に戻る";
-    back.addEventListener("click", function () { selectCharacter(state.charTag); });
-    noteEl.appendChild(back);
-  } else {
-    noteEl.hidden = true;
-    noteEl.innerHTML = "";
-  }
   showAllBtn.classList.toggle("active", hasAnyFilter());
 }
 
 function selectCharacter(tag) {
   state.charTag = state.charTag === tag ? null : tag;
   state.tags = state.tags.filter(function (t) { return t !== tag; });
-  stage.setSelected(state.charTag);
+  faceSelect.setSelected(state.charTag);
   renderTags();
   renderGrid();
 }
@@ -485,7 +404,7 @@ function clearAllFilters() {
   document.querySelectorAll("[data-category]").forEach(function (b) {
     b.setAttribute("aria-pressed", b.getAttribute("data-category") === "all" ? "true" : "false");
   });
-  stage.setSelected(null);
+  faceSelect.setSelected(null);
   renderTags();
   renderGrid();
 }
@@ -497,13 +416,13 @@ function filterByTag(tag) {
     state.charTag = null;
     state.tags = [tag];
   }
-  stage.setSelected(state.charTag);
+  faceSelect.setSelected(state.charTag);
   renderTags();
   renderGrid();
   window.scrollTo({ top: 0 });
 }
 
-var stage = createStage(function (tag) { selectCharacter(tag); }, "表示中");
+var faceSelect = createFaceSelect(function (tag) { selectCharacter(tag); });
 document.querySelectorAll("[data-category]").forEach(function (b) {
   b.addEventListener("click", function () {
     state.category = b.getAttribute("data-category");
@@ -519,7 +438,7 @@ document.getElementById("gallery-sort").addEventListener("change", function (e) 
 });
 showAllBtn.addEventListener("click", clearAllFilters);
 document.getElementById("gallery-reset").addEventListener("click", clearAllFilters);
-stage.setSelected(state.charTag);
+faceSelect.setSelected(state.charTag);
 renderTags();
 renderGrid();
 

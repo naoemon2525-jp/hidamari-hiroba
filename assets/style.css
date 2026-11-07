@@ -805,6 +805,160 @@ h3.block-title {
   clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
 
+/* ---------- sakura scenery background + falling petals (all pages) ----------
+   A painted sakura illustration is laid, very faintly, behind every page as
+   a fixed layer, with a few petals drifting slowly over the content. Both
+   layers are pointer-events: none and purely decorative. */
+:root { --scenery-opacity: 0.5; }
+@media (prefers-color-scheme: dark) {
+  :root { --scenery-opacity: 0.22; }
+}
+.sakura-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+.sakura-bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  opacity: var(--scenery-opacity);
+}
+@media (max-width: 767px) {
+  /* On portrait phones a plain cover crop would push the corner branches
+     off-screen, so the painting is shown wider (215% of the viewport) at
+     the top centre and faded into the base colour towards its bottom. */
+  .sakura-bg img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 215%;
+    height: auto;
+    max-width: none;
+    object-fit: initial;
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 97%);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 97%);
+  }
+}
+.petals {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+.petal {
+  position: absolute;
+  top: -5vh;
+  display: block;
+  border-radius: 90% 4px 90% 4px;
+  background: linear-gradient(135deg, #fcd9e4, #f191b2);
+  animation-name: petal-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+@keyframes petal-fall {
+  0% { transform: translate3d(0, -5vh, 0) rotate(0deg); }
+  25% { transform: translate3d(2.2vw, 27vh, 0) rotate(95deg); }
+  50% { transform: translate3d(-1.4vw, 54vh, 0) rotate(185deg); }
+  75% { transform: translate3d(2.6vw, 81vh, 0) rotate(270deg); }
+  100% { transform: translate3d(0.6vw, 108vh, 0) rotate(355deg); }
+}
+.petals.paused .petal { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .petals { display: none; }
+}
+
+/* ---------- gallery face-icon character selector ---------- */
+.face-section { margin-top: 16px; }
+.face-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+.face-head .lead-xs { margin: 0; }
+.face-frame {
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+}
+.face-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 10px 12px;
+}
+@media (min-width: 640px) { .face-row { padding: 12px 12px 14px; } }
+.face-icon {
+  position: relative;
+  flex: 0 0 auto;
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: var(--surface);
+  cursor: pointer;
+  transition: opacity 0.15s ease-out, box-shadow 0.15s ease-out, transform 0.15s ease-out;
+}
+@media (min-width: 640px) { .face-icon { width: 60px; height: 60px; } }
+.face-icon img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+.face-icon.dimmed { opacity: 0.45; }
+.face-icon[aria-pressed="true"] {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 2px rgba(226, 98, 138, 0.35), 0 0 12px rgba(226, 98, 138, 0.55);
+}
+.face-icon:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; }
+@media (hover: hover) {
+  .face-icon:hover { transform: scale(1.06); box-shadow: 0 0 10px rgba(226, 98, 138, 0.5); }
+  .face-icon[aria-pressed="true"]:hover {
+    box-shadow: 0 0 0 2px rgba(226, 98, 138, 0.35), 0 0 14px rgba(226, 98, 138, 0.7);
+  }
+}
+.face-tail {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 6px;
+}
+.face-selected {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.face-selected[hidden] { display: none; }
+.face-selected .name {
+  font-family: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", sans-serif;
+  font-weight: 900;
+  color: var(--navy);
+}
+.face-selected .pill {
+  border-radius: 999px;
+  background: var(--pink);
+  color: #fff;
+  padding: 1px 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+@media (prefers-reduced-motion: reduce) {
+  .face-icon { transition: none; }
+  .face-icon:hover { transform: none; }
+}
+
+/* ---------- gallery list header (compact) ---------- */
+.list-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+.list-head .count-line { margin: 0; }
+.filter-row .tag-row { margin-top: 0; }
+
 .x-link { margin: 8px 0 0; font-size: 13px; }
 .x-link a { color: var(--accent); font-weight: 700; text-decoration: none; }
 .x-link a:hover { text-decoration: underline; }

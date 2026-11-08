@@ -112,11 +112,12 @@ main {
 @media (min-width: 768px) {
   /* Desktop: body text sits on a calm translucent veil, so the sakura
      painting frames the page (margins, gaps) instead of running under
-     the glyphs where its branches fight the text colour. */
+     the glyphs where its branches fight the text colour.
+     NOTE: no backdrop-filter here — it would make <main> the containing
+     block for the fixed full-screen viewer inside it and push the
+     viewed image far down the page. */
   main {
     background: rgba(255, 250, 251, 0.82);
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
   }
 }
 

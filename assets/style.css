@@ -821,9 +821,10 @@ h3.block-title {
    layers are pointer-events: none and purely decorative. */
 :root { --scenery-opacity: 0.5; }
 @media (min-width: 768px) {
-  /* On desktop the canopy sits right behind the headings, so keep the
-     painting paler there; phones keep the stronger value. */
-  :root { --scenery-opacity: 0.3; }
+  /* Desktop keeps the painting at full strength: readability is handled
+     by the translucent veil over the main column, so the artwork can
+     stay clearly visible in the margins around it. */
+  :root { --scenery-opacity: 0.5; }
 }
 @media (prefers-color-scheme: dark) {
   :root { --scenery-opacity: 0.22; }

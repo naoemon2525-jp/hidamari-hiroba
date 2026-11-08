@@ -109,6 +109,16 @@ main {
   padding: 16px 16px 48px;
   flex: 1;
 }
+@media (min-width: 768px) {
+  /* Desktop: body text sits on a calm translucent veil, so the sakura
+     painting frames the page (margins, gaps) instead of running under
+     the glyphs where its branches fight the text colour. */
+  main {
+    background: rgba(255, 250, 251, 0.82);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+  }
+}
 
 .sidebar-inner { display: flex; min-height: 100%; flex-direction: column; }
 .sidebar-head { padding: 24px 20px 20px; }

@@ -1018,20 +1018,15 @@ h3.block-title {
 }
 .trio-card .trio-img {
   background: #fdeef3;
-  height: 368px;
-  padding: 14px 10px 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  padding: 8px 8px 2px;
 }
+/* The trio images share one canvas with a common baseline and equal
+   figure height, so width:100% lines all three up exactly. */
 .trio-card .trio-img img {
   display: block;
-  max-width: 100%;
-  object-fit: contain;
+  width: 100%;
+  height: auto;
 }
-.trio-card:nth-child(1) .trio-img img { height: 298px; }
-.trio-card:nth-child(2) .trio-img img { height: 302px; }
-.trio-card:nth-child(3) .trio-img img { height: 268px; }
 .trio-card .trio-text { padding: 12px 15px 16px; }
 .trio-card .trio-text h4 {
   font-family: "Zen Maru Gothic", "Noto Sans JP", sans-serif;
@@ -1043,8 +1038,4 @@ h3.block-title {
 .trio-card .trio-text p { margin: 0; font-size: 15px; line-height: 1.85; }
 @media (max-width: 700px) {
   .trio-grid { grid-template-columns: 1fr; }
-  .trio-card .trio-img { height: 388px; }
-  .trio-card:nth-child(1) .trio-img img { height: 318px; }
-  .trio-card:nth-child(2) .trio-img img { height: 322px; }
-  .trio-card:nth-child(3) .trio-img img { height: 288px; }
 }

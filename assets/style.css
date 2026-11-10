@@ -996,25 +996,43 @@ h3.block-title {
   line-height: 1.5;
   margin: 36px 0 4px;
 }
+/* Trio cards: three across, portrait image area on a pale pink ground,
+   name heading and text below — matching the main archive's cards. */
+.trio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 22px 0 6px;
+}
 .trio-card {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: var(--surface-alt);
-  padding: 16px;
-  margin: 20px 0;
+  background: var(--surface);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
-.trio-card img {
-  width: 118px;
-  max-height: 280px;
-  object-fit: contain;
-  flex-shrink: 0;
+.trio-card .trio-img {
+  background: #fdeef3;
+  padding: 14px 10px 6px;
+}
+.trio-card .trio-img img {
   display: block;
+  margin: 0 auto;
+  height: 320px;
+  max-width: 100%;
+  object-fit: contain;
 }
-.trio-card .trio-text { min-width: 0; }
+.trio-card .trio-text { padding: 14px 16px 18px; }
+.trio-card .trio-text h4 {
+  font-family: "Zen Maru Gothic", "Noto Sans JP", sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--accent);
+  margin: 0 0 8px;
+}
 .trio-card .trio-text p { margin: 0; }
-@media (max-width: 560px) {
-  .trio-card img { width: 84px; }
+@media (max-width: 700px) {
+  .trio-grid { grid-template-columns: 1fr; }
+  .trio-card .trio-img img { height: 340px; }
 }

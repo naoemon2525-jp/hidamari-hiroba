@@ -986,3 +986,35 @@ h3.block-title {
 .x-link a { color: var(--accent); font-weight: 700; text-decoration: none; }
 .x-link a:hover { text-decoration: underline; }
 .site-footer a { color: var(--accent); }
+
+/* Article pages: headings inside the reading body and the profile
+   cards used in the twintail essay's character-analysis section. */
+.article-body h3 {
+  font-family: "Zen Maru Gothic", "Noto Sans JP", sans-serif;
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 36px 0 4px;
+}
+.trio-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-alt);
+  padding: 16px;
+  margin: 20px 0;
+}
+.trio-card img {
+  width: 118px;
+  max-height: 280px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+}
+.trio-card .trio-text { min-width: 0; }
+.trio-card .trio-text p { margin: 0; }
+@media (max-width: 560px) {
+  .trio-card img { width: 84px; }
+}

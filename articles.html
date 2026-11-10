@@ -30,9 +30,9 @@
         <p class="tagline">イラストと設定資料のアーカイブ</p>
         <p class="x-link"><a href="https://x.com/nao_emon_2525" target="_blank" rel="noopener noreferrer">X（@nao_emon_2525）</a></p>
         <p class="count-chips">
-          <span>イラスト 32件</span>
+          <span>イラスト 34件</span>
           <span>漫画 1件</span>
-          <span>記事 0件</span>
+          <span>記事 2件</span>
           <span>小説 1作品</span>
           <span>あいうえお 絵 29/46</span>
         </p>
@@ -63,9 +63,9 @@
         <p class="tagline">イラストと設定資料のアーカイブ</p>
         <p class="x-link"><a href="https://x.com/nao_emon_2525" target="_blank" rel="noopener noreferrer">X（@nao_emon_2525）</a></p>
         <p class="count-chips">
-          <span>イラスト 32件</span>
+          <span>イラスト 34件</span>
           <span>漫画 1件</span>
-          <span>記事 0件</span>
+          <span>記事 2件</span>
           <span>小説 1作品</span>
           <span>あいうえお 絵 29/46</span>
         </p>
@@ -88,7 +88,7 @@
           <div>
             <h2 class="section-title">Articles<span class="sub">記事</span></h2>
             <p class="lead">ツインテール考察やブレザー考察のような、長い文章を置く場所です。イラストとは別に、タイトル・日付・本文・タグで管理できます。</p>
-            <p class="count-line">0件</p>
+            <p class="count-line" id="article-count">2件</p>
           </div>
           <div class="filter-row">
                   <label style="display:flex;align-items:center;gap:8px;font-size:14px;">
@@ -99,9 +99,28 @@
                     </select>
                   </label>
                 </div>
-          <div class="empty-state">
-            <p class="empty-title">まだ記事がありません</p>
-          </div>
+          <div class="tag-row" aria-label="記事をタグで絞り込み">
+                  <button type="button" class="chip" data-tag-chip="" aria-pressed="true">すべてのタグ</button>
+                  <button type="button" class="chip" data-tag-chip="美桜ちゃん" aria-pressed="false" aria-label="タグ「美桜ちゃん」の記事だけを表示（2件）">#美桜ちゃん 2</button><button type="button" class="chip" data-tag-chip="ツインテール" aria-pressed="false" aria-label="タグ「ツインテール」の記事だけを表示（1件）">#ツインテール 1</button><button type="button" class="chip" data-tag-chip="美優ちゃん" aria-pressed="false" aria-label="タグ「美優ちゃん」の記事だけを表示（1件）">#美優ちゃん 1</button><button type="button" class="chip" data-tag-chip="ひよりちゃん" aria-pressed="false" aria-label="タグ「ひよりちゃん」の記事だけを表示（1件）">#ひよりちゃん 1</button><button type="button" class="chip" data-tag-chip="ブレザー" aria-pressed="false" aria-label="タグ「ブレザー」の記事だけを表示（1件）">#ブレザー 1</button><button type="button" class="chip" data-tag-chip="制服" aria-pressed="false" aria-label="タグ「制服」の記事だけを表示（1件）">#制服 1</button>
+                </div>
+          <ul class="card-grid" id="article-list">
+<li data-date="2026-11-09" data-id="2" data-tags="[&quot;ブレザー&quot;, &quot;制服&quot;, &quot;美桜ちゃん&quot;]">
+            <a class="card" href="article-2.html" aria-label="ブレザー考察を読む">
+              <span class="thumb"><img src="images/articles/blazer-title.jpg" alt="ブレザー考察" loading="lazy"><span class="badge">図版5点</span></span>
+              <span class="card-title">ブレザー考察</span>
+              <span class="card-date">2026年11月9日</span>
+            </a>
+            <span class="card-tags"><button type="button" class="tag-chip" data-tag-filter="ブレザー" aria-pressed="false" aria-label="タグ「ブレザー」で絞り込む">#ブレザー</button><button type="button" class="tag-chip" data-tag-filter="制服" aria-pressed="false" aria-label="タグ「制服」で絞り込む">#制服</button><button type="button" class="tag-chip" data-tag-filter="美桜ちゃん" aria-pressed="false" aria-label="タグ「美桜ちゃん」で絞り込む">#美桜ちゃん</button></span>
+          </li>
+<li data-date="2026-11-09" data-id="1" data-tags="[&quot;ツインテール&quot;, &quot;美桜ちゃん&quot;, &quot;美優ちゃん&quot;, &quot;ひよりちゃん&quot;]">
+            <a class="card" href="article-1.html" aria-label="ツインテール考察を読む">
+              <span class="thumb"><img src="images/articles/twintail-tying.jpg" alt="ツインテール考察" loading="lazy"><span class="badge">図版6点</span></span>
+              <span class="card-title">ツインテール考察</span>
+              <span class="card-date">2026年11月9日</span>
+            </a>
+            <span class="card-tags"><button type="button" class="tag-chip" data-tag-filter="ツインテール" aria-pressed="false" aria-label="タグ「ツインテール」で絞り込む">#ツインテール</button><button type="button" class="tag-chip" data-tag-filter="美桜ちゃん" aria-pressed="false" aria-label="タグ「美桜ちゃん」で絞り込む">#美桜ちゃん</button><button type="button" class="tag-chip" data-tag-filter="美優ちゃん" aria-pressed="false" aria-label="タグ「美優ちゃん」で絞り込む">#美優ちゃん</button><button type="button" class="tag-chip" data-tag-filter="ひよりちゃん" aria-pressed="false" aria-label="タグ「ひよりちゃん」で絞り込む">#ひよりちゃん</button></span>
+          </li>
+          </ul>
         </section>
     </main>
     <footer class="site-footer">
@@ -110,7 +129,7 @@
         <div>
           <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
           <p class="tagline" style="margin-top:8px;font-size:12px;">イラストと設定資料のアーカイブ</p>
-          <p class="footer-note">掲載内容は2026年11月9日時点のものです。</p>
+          <p class="footer-note">掲載内容は2026年11月10日時点のものです。</p>
           <p class="footer-note">X: <a href="https://x.com/nao_emon_2525" target="_blank" rel="noopener noreferrer">@nao_emon_2525</a></p>
         </div>
         <div class="footer-links">
@@ -126,6 +145,65 @@
   </div>
 </div>
 <script src="assets/site.js"></script>
+<script>
+// List filtering/sorting for the Articles list page (same pattern as Comic/Story).
+(function () {
+  var listEl = document.getElementById("article-list");
+  if (!listEl) return;
+  var selected = [];
+  var countEl = document.getElementById("article-count");
+  var total = listEl.children.length;
+  var unit = "件";
+  var sortSel = document.getElementById("article-sort");
+  function apply() {
+    var items = [...listEl.children];
+    items.forEach(function (li) {
+      var tags = JSON.parse(li.getAttribute("data-tags") || "[]");
+      li.style.display = selected.every(function (t) { return tags.indexOf(t) >= 0; }) ? "" : "none";
+    });
+    var visible = items.filter(function (li) { return li.style.display !== "none"; }).length;
+    if (countEl) {
+      countEl.textContent = selected.length > 0
+        ? "全" + total + unit + "のうち " + visible + unit + "を表示しています"
+        : total + unit;
+    }
+    document.querySelectorAll("[data-tag-chip]").forEach(function (chip) {
+      var t = chip.getAttribute("data-tag-chip");
+      chip.setAttribute("aria-pressed", t === "" ? (selected.length === 0 ? "true" : "false") : (selected.indexOf(t) >= 0 ? "true" : "false"));
+    });
+  }
+  document.querySelectorAll("[data-tag-chip]").forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      var t = chip.getAttribute("data-tag-chip");
+      if (t === "") selected = [];
+      else if (selected.indexOf(t) >= 0) selected = selected.filter(function (x) { return x !== t; });
+      else selected = selected.concat([t]);
+      apply();
+    });
+  });
+  document.querySelectorAll("[data-tag-filter]").forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      var t = chip.getAttribute("data-tag-filter");
+      if (selected.indexOf(t) < 0) selected = selected.concat([t]);
+      apply();
+    });
+  });
+  if (sortSel) {
+    sortSel.addEventListener("change", function () {
+      var dir = sortSel.value === "new" ? -1 : 1;
+      var items = [...listEl.children];
+      items.sort(function (a, b) {
+        var da = a.getAttribute("data-date"), db = b.getAttribute("data-date");
+        if (da !== db) return (da < db ? -1 : 1) * dir;
+        return (Number(a.getAttribute("data-id")) - Number(b.getAttribute("data-id"))) * dir;
+      });
+      items.forEach(function (li) { listEl.appendChild(li); });
+    });
+  }
+  apply();
+})();
+</script>
+
 
 </body>
 </html>

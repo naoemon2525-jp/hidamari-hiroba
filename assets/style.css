@@ -224,6 +224,9 @@ footer.site-footer { background: var(--chrome); }
 /* ---------- top visual ---------- */
 .top-visual { max-width: 680px; margin: 0 auto; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); line-height: 0; }
 .top-visual img { width: 100%; height: auto; display: block; }
+@media (min-width: 900px) {
+  .top-visual { max-width: min(680px, calc((100vh - 140px) * 0.6667)); }
+}
 
 /* ---------- headings & text ---------- */
 h2.section-title {

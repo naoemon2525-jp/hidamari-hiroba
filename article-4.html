@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>きゃらくるで作る3D美桜ちゃん製作日記 その1：ツール選び編 | 美桜ちゃんのひだまり広場</title>
+<link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body id="top">
+<div class="shell">
+  <div class="topbar">
+    <a href="index.html" aria-label="美桜ちゃんのひだまり広場 トップへ移動">
+      <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+    </a>
+    <button type="button" class="btn btn-outline" data-menu-open aria-label="メニューを開く" aria-expanded="false" style="padding:6px 16px;">メニュー</button>
+  </div>
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-head">
+        <h1 class="sr-only">美桜ちゃんのひだまり広場</h1>
+        <a href="index.html" aria-label="美桜ちゃんのひだまり広場 トップへ移動">
+          <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+        </a>
+        <p class="tagline">イラストと設定資料のアーカイブ</p>
+        <p class="x-link"><a href="https://x.com/nao_emon_2525" target="_blank" rel="noopener noreferrer">X（@nao_emon_2525）</a></p>
+        <p class="count-chips">
+          <span>イラスト 39件</span>
+          <span>漫画 1件</span>
+          <span>記事 3件</span>
+          <span>小説 1作品</span>
+          <span>あいうえお 絵 29/46</span>
+        </p>
+      </div>
+      <nav class="side-nav" aria-label="サイトメニュー">
+          <a href="index.html" aria-label="メニュー：TOP、トップページを表示"><span class="menu-label-en">TOP</span><span class="menu-label-ja">トップ</span></a>
+          <a href="gallery.html" aria-label="メニュー：Gallery、キャラクターとイラストを表示"None><span class="menu-label-en">Gallery</span><span class="menu-label-ja">イラスト・設定資料</span></a>
+          <a href="character.html" aria-label="メニュー：Character、キャラクターのプロフィールを表示"><span class="menu-label-en">Character</span><span class="menu-label-ja">キャラクター</span></a>
+          <a href="comic.html" aria-label="メニュー：Comic、漫画を表示"><span class="menu-label-en">Comic</span><span class="menu-label-ja">漫画</span></a>
+          <a href="story.html" aria-label="メニュー：Story、小説を表示"><span class="menu-label-en">Story</span><span class="menu-label-ja">小説</span></a>
+          <a href="aiueo.html" aria-label="メニュー：Aiueo、あいうえおを表示"><span class="menu-label-en">Aiueo</span><span class="menu-label-ja">あいうえお</span></a>
+          <a href="articles.html" aria-label="メニュー：Articles、記事を表示" aria-current="page"><span class="menu-label-en">Articles</span><span class="menu-label-ja">記事</span></a>
+      </nav>
+      <div class="sidebar-foot"><div class="check-band" aria-hidden="true"></div></div>
+    </div>
+  </aside>
+  <div class="mobile-menu" id="mobile-menu" hidden role="dialog" aria-modal="true" aria-label="サイトメニュー">
+    <button type="button" class="backdrop" data-menu-close aria-label="メニューを閉じる"></button>
+    <div class="panel">
+      <div class="close-row">
+        <button type="button" class="btn btn-outline" data-menu-close aria-label="メニューを閉じる" style="padding:6px 16px;">閉じる</button>
+      </div>
+    <div class="sidebar-inner">
+      <div class="sidebar-head">
+        <h1 class="sr-only">美桜ちゃんのひだまり広場</h1>
+        <a href="index.html" aria-label="美桜ちゃんのひだまり広場 トップへ移動">
+          <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+        </a>
+        <p class="tagline">イラストと設定資料のアーカイブ</p>
+        <p class="x-link"><a href="https://x.com/nao_emon_2525" target="_blank" rel="noopener noreferrer">X（@nao_emon_2525）</a></p>
+        <p class="count-chips">
+          <span>イラスト 39件</span>
+          <span>漫画 1件</span>
+          <span>記事 3件</span>
+          <span>小説 1作品</span>
+          <span>あいうえお 絵 29/46</span>
+        </p>
+      </div>
+      <nav class="side-nav" aria-label="サイトメニュー">
+          <a href="index.html" aria-label="メニュー：TOP、トップページを表示"><span class="menu-label-en">TOP</span><span class="menu-label-ja">トップ</span></a>
+          <a href="gallery.html" aria-label="メニュー：Gallery、キャラクターとイラストを表示"None><span class="menu-label-en">Gallery</span><span class="menu-label-ja">イラスト・設定資料</span></a>
+          <a href="character.html" aria-label="メニュー：Character、キャラクターのプロフィールを表示"><span class="menu-label-en">Character</span><span class="menu-label-ja">キャラクター</span></a>
+          <a href="comic.html" aria-label="メニュー：Comic、漫画を表示"><span class="menu-label-en">Comic</span><span class="menu-label-ja">漫画</span></a>
+          <a href="story.html" aria-label="メニュー：Story、小説を表示"><span class="menu-label-en">Story</span><span class="menu-label-ja">小説</span></a>
+          <a href="aiueo.html" aria-label="メニュー：Aiueo、あいうえおを表示"><span class="menu-label-en">Aiueo</span><span class="menu-label-ja">あいうえお</span></a>
+          <a href="articles.html" aria-label="メニュー：Articles、記事を表示" aria-current="page"><span class="menu-label-en">Articles</span><span class="menu-label-ja">記事</span></a>
+      </nav>
+      <div class="sidebar-foot"><div class="check-band" aria-hidden="true"></div></div>
+    </div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <main>
+<article>
+          <a class="link-back" href="articles.html">← Articles一覧に戻る</a>
+          <h2 class="reader-head-title">きゃらくるで作る3D美桜ちゃん製作日記 その1：ツール選び編</h2>
+          <p class="meta-line">2026年11月18日 ・ 図版5点</p>
+          <div class="tag-row"><a class="chip" style="color:var(--pink);" href="articles.html" aria-label="タグ「3D」の記事だけを表示">#3D</a><a class="chip" style="color:var(--pink);" href="articles.html" aria-label="タグ「美桜ちゃん」の記事だけを表示">#美桜ちゃん</a><a class="chip" style="color:var(--pink);" href="articles.html" aria-label="タグ「製作日記」の記事だけを表示">#製作日記</a><a class="chip" style="color:var(--pink);" href="articles.html" aria-label="タグ「きゃらくる」の記事だけを表示">#きゃらくる</a></div>
+          <div class="episode-body article-body">
+<h3>■はじめに</h3>
+<p>美桜ちゃんを動かしたいなー、というのは前からずっと思ってた。</p>
+<p>動けばダンス動画も作れるし、ゲームにも出せる。
+アクションゲームで敵をばったばた倒す美桜ちゃんが作れる！</p>
+<figure><img src="images/articles/diary-3d-original.png" alt="元のイラストの美桜ちゃん" loading="lazy"></figure>
+<p>でもさ～、3Dって敷居が高いじゃん？
+ソフトは専門的だし、知識も要るし。
+Stable Diffusionでイラストは作れるようにはなったよ。
+でも2次元の話じゃん？
+3Dは作れんて。
+だから長いこと、手が出なかった。</p>
+<p>そんなある日、Xを眺めてたら「きゃらくる」というのを見つけた。
+自分の描いた絵から3Dキャラクターが作れるらしい。</p>
+<p>お、これは！……と思ったけど、手順を見たら頭と体の絵を何枚も用意して、まとめて読み込ませてどうのこうの。
+ソフトもいっぱい入れて、Tripoも使って（多分有料じゃないとキレイに作れないだろ）、Codexとかも必要？
+これも有料版じゃないとキツイのかな？
+うん、めんどくさそう！
+そっ閉じｗ</p>
+<p>他に無料で、もっと楽にできないかな？</p>
+<p>ここから迷走が始まるのであるｗ</p>
+<h3>■迷走1：Tripo</h3>
+<p>まず試したのは、画像1枚から3Dが作れるTripo。
+Xの広告でよく見るし、その広告では綺麗な3Dキャラが載ってるし。
+やってみっか！</p>
+<figure><img src="images/articles/diary-3d-tripo.png" alt="Tripo単体で作った美桜ちゃん" loading="lazy"></figure>
+<p>出てきたのがこれ。
+まぁ、出来てるっちゃ出来てるよ。
+元のイラストの通り、ウィンクにピースでポーズも決まってるし、ツインテールも制服の色分けも一通り入ってる。</p>
+<p>でも近くで見ると怪しい所が次々出てくる。
+顔があんまり可愛くない。
+ブレザーのエンブレムが左右両方に付いてるし、腕のボタンはおかしいし、バランスも悪い。</p>
+<p>クオリティに満足できない。
+却下。</p>
+<h3>■迷走2：VRoid</h3>
+<p>次は無料でキャラが作れる定番、VRoid。
+……なんだけど、VRoidには前科がある。</p>
+<p>何年か前、自分で触って作ってみたことがある。</p>
+<figure><img src="images/articles/diary-3d-vroid-old.png" alt="何年か前に自分で作ったVRoid版" loading="lazy"></figure>
+<p>一応美桜ちゃんとも言えなくない特徴は入れてる。
+だが、顔もいかにもVRoidの顔。
+画風が圧倒的に美桜ちゃんにはならなかった。</p>
+<p>で、今回。
+Xで「VRoidとCodexでいい感じに出来る」というのを見かけて、Codexに触らせてみた。</p>
+<figure><img src="images/articles/diary-3d-vroid-codex.png" alt="今回のVRoid＋Codex版" loading="lazy"></figure>
+<p>結果、何年か前の自分作より酷かった。
+ツインテールが消えてストレートロングになってるし、カーディガンも無いし、スカートはグレーのチェック。
+作り自体は整ってるのに、美桜ちゃんの要素ごと抜け落ちて別人になった。</p>
+<p>VRoidは可愛い女の子は作れる。
+でも、どうやっても美桜ちゃんにはならない。
+却下。</p>
+<h3>■迷走3：Hunyuan 2.1</h3>
+<p>じゃあローカル生成はどうだと、Hunyuan 2.1を自分のPCで回してみた。
+無料で回し放題なのは魅力。</p>
+<figure><img src="images/articles/diary-3d-hunyuan.png" alt="Hunyuanで生成した美桜ちゃん" loading="lazy"></figure>
+<p>出てきたのは「邪神」だったｗ</p>
+<p>却下。</p>
+<h3>■迷走4：Idol</h3>
+<p>これは試してすらいない。
+Museに相談して、俺の意図には合わないって話になった。
+出力がガウシアンスプラットとかいうやつで、メッシュも骨（リグ）も無いから動かせないんだよね。</p>
+<p>却下。</p>
+<h3>■結局、きゃらくる</h3>
+<p>というわけで、無料で楽な道は全滅した。</p>
+<p>一周回って、保留してたきゃらくるに戻ってきた。
+よく見たら、Museと相談しながらなら出来そうかなって。</p>
+<ul>
+<li>頭と体を分けて作れる</li>
+<li>使う絵は全部自分で用意して持ち込む（生成任せにしない）</li>
+<li>最後はBlenderで直して、VRMで出せる</li>
+</ul>
+<p>自分が納得のいく美桜ちゃんを作るのは、むしろこのくらいは必要なのかも？
+結局、最初の段階でダメだったTripoを使うことになりそうだけど、Xで見かけたものは可愛く出来てたし、何とかなるかな？</p>
+<p>2026年11月14日、きゃらくるで製作開始！</p>
+<p>次回は素材作り編の予定。</p>
+<p>（つづく）</p>
+<h3>■リンク集</h3>
+<ul>
+<li><a href="https://github.com/nanocle/Charakuru" target="_blank" rel="noopener noreferrer">きゃらくる（Charakuru）</a></li>
+<li><a href="https://www.tripo3d.ai" target="_blank" rel="noopener noreferrer">Tripo</a></li>
+<li><a href="https://vroid.com/studio" target="_blank" rel="noopener noreferrer">VRoid Studio</a></li>
+<li><a href="https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1" target="_blank" rel="noopener noreferrer">Hunyuan3D 2.1</a></li>
+</ul>
+          </div>
+          <div class="reader-nav">
+            <a class="btn btn-outline" href="articles.html">Articles一覧に戻る</a>
+          </div>
+        </article>
+    </main>
+    <footer class="site-footer">
+      <div class="check-band" aria-hidden="true"></div>
+      <div class="footer-inner">
+        <div>
+          <img src="images/logo.webp" alt="美桜ちゃんのひだまり広場" class="logo-img">
+          <p class="tagline" style="margin-top:8px;font-size:12px;">イラストと設定資料のアーカイブ</p>
+          <p class="footer-note">掲載内容は2026年11月14日時点のものです。</p>
+          <p class="footer-note">X: <a href="https://x.com/nao_emon_2525" target="_blank" rel="noopener noreferrer">@nao_emon_2525</a></p>
+        </div>
+        <div class="footer-links">
+          <a href="gallery.html" aria-label="フッター：Galleryへ移動">Gallery</a>
+          <a href="character.html" aria-label="フッター：Characterへ移動">Character</a>
+          <a href="comic.html" aria-label="フッター：Comicへ移動">Comic</a>
+          <a href="story.html" aria-label="フッター：Storyへ移動">Story</a>
+          <a href="articles.html" aria-label="フッター：Articlesへ移動">Articles</a>
+          <a href="#top" class="btn btn-outline" aria-label="フッター：トップに戻る" style="padding:8px 16px;">トップに戻る</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+<script src="assets/site.js"></script>
+
+</body>
+</html>

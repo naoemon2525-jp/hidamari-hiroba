@@ -447,6 +447,10 @@ h3.block-title {
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
+/* Grid items must be allowed to shrink below their content size:
+   a card title with white-space:nowrap would otherwise inflate its
+   track and push the other columns off-screen on narrow viewports. */
+.card-grid > li { min-width: 0; }
 @media (min-width: 640px) { .card-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
 @media (min-width: 1024px) { .card-grid.gallery-grid { grid-template-columns: repeat(4, 1fr); } }
 .card { display: block; width: 100%; text-align: left; cursor: pointer; text-decoration: none; }
